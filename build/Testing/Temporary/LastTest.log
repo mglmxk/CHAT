@@ -1,0 +1,245 @@
+Start testing: Sep 07 06:33 UTC
+----------------------------------------------------------
+1/8 Testing: messageTest.CopyDoesNotInvokeMove
+1/8 Test: messageTest.CopyDoesNotInvokeMove
+Command: "/home/vboxuser/Desktop/CHAT/build/chat_tests" "--gtest_filter=messageTest.CopyDoesNotInvokeMove" "--gtest_also_run_disabled_tests"
+Directory: /home/vboxuser/Desktop/CHAT/build
+"messageTest.CopyDoesNotInvokeMove" start time: Sep 07 06:33 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/vboxuser/Desktop/CHAT/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = messageTest.CopyDoesNotInvokeMove
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from messageTest
+[ RUN      ] messageTest.CopyDoesNotInvokeMove
+[       OK ] messageTest.CopyDoesNotInvokeMove (0 ms)
+[----------] 1 test from messageTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"messageTest.CopyDoesNotInvokeMove" end time: Sep 07 06:33 UTC
+"messageTest.CopyDoesNotInvokeMove" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/8 Testing: MessageTest.MoveDoesNotInvokeCopy
+2/8 Test: MessageTest.MoveDoesNotInvokeCopy
+Command: "/home/vboxuser/Desktop/CHAT/build/chat_tests" "--gtest_filter=MessageTest.MoveDoesNotInvokeCopy" "--gtest_also_run_disabled_tests"
+Directory: /home/vboxuser/Desktop/CHAT/build
+"MessageTest.MoveDoesNotInvokeCopy" start time: Sep 07 06:33 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/vboxuser/Desktop/CHAT/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = MessageTest.MoveDoesNotInvokeCopy
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MessageTest
+[ RUN      ] MessageTest.MoveDoesNotInvokeCopy
+/home/vboxuser/Desktop/CHAT/tests/chat_tests.cpp:25: Failure
+Expected equality of these values:
+  Message::copy_ctor_calls
+    Which is: 1
+  0
+
+/home/vboxuser/Desktop/CHAT/tests/chat_tests.cpp:26: Failure
+Expected: (Message::move_ctor_calls) > (0), actual: 0 vs 0
+
+[  FAILED  ] MessageTest.MoveDoesNotInvokeCopy (0 ms)
+[----------] 1 test from MessageTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] MessageTest.MoveDoesNotInvokeCopy
+
+ 1 FAILED TEST
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"MessageTest.MoveDoesNotInvokeCopy" end time: Sep 07 06:33 UTC
+"MessageTest.MoveDoesNotInvokeCopy" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/8 Testing: MessageTest.AddTemporaryToRoomDoesNotCopy
+3/8 Test: MessageTest.AddTemporaryToRoomDoesNotCopy
+Command: "/home/vboxuser/Desktop/CHAT/build/chat_tests" "--gtest_filter=MessageTest.AddTemporaryToRoomDoesNotCopy" "--gtest_also_run_disabled_tests"
+Directory: /home/vboxuser/Desktop/CHAT/build
+"MessageTest.AddTemporaryToRoomDoesNotCopy" start time: Sep 07 06:33 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/vboxuser/Desktop/CHAT/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = MessageTest.AddTemporaryToRoomDoesNotCopy
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MessageTest
+[ RUN      ] MessageTest.AddTemporaryToRoomDoesNotCopy
+/home/vboxuser/Desktop/CHAT/tests/chat_tests.cpp:37: Failure
+Expected equality of these values:
+  Message::copy_ctor_calls
+    Which is: 1
+  0
+
+/home/vboxuser/Desktop/CHAT/tests/chat_tests.cpp:38: Failure
+Expected: (Message::move_ctor_calls) > (0), actual: 0 vs 0
+
+[  FAILED  ] MessageTest.AddTemporaryToRoomDoesNotCopy (0 ms)
+[----------] 1 test from MessageTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] MessageTest.AddTemporaryToRoomDoesNotCopy
+
+ 1 FAILED TEST
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"MessageTest.AddTemporaryToRoomDoesNotCopy" end time: Sep 07 06:33 UTC
+"MessageTest.AddTemporaryToRoomDoesNotCopy" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/8 Testing: OwningBufferTest.SelfAssignmentDoesNotDestroy
+4/8 Test: OwningBufferTest.SelfAssignmentDoesNotDestroy
+Command: "/home/vboxuser/Desktop/CHAT/build/chat_tests" "--gtest_filter=OwningBufferTest.SelfAssignmentDoesNotDestroy" "--gtest_also_run_disabled_tests"
+Directory: /home/vboxuser/Desktop/CHAT/build
+"OwningBufferTest.SelfAssignmentDoesNotDestroy" start time: Sep 07 06:33 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/vboxuser/Desktop/CHAT/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = OwningBufferTest.SelfAssignmentDoesNotDestroy
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OwningBufferTest
+[ RUN      ] OwningBufferTest.SelfAssignmentDoesNotDestroy
+[       OK ] OwningBufferTest.SelfAssignmentDoesNotDestroy (0 ms)
+[----------] 1 test from OwningBufferTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"OwningBufferTest.SelfAssignmentDoesNotDestroy" end time: Sep 07 06:33 UTC
+"OwningBufferTest.SelfAssignmentDoesNotDestroy" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/8 Testing: OwningBufferTest.CopyCreatesIndependentMemory
+5/8 Test: OwningBufferTest.CopyCreatesIndependentMemory
+Command: "/home/vboxuser/Desktop/CHAT/build/chat_tests" "--gtest_filter=OwningBufferTest.CopyCreatesIndependentMemory" "--gtest_also_run_disabled_tests"
+Directory: /home/vboxuser/Desktop/CHAT/build
+"OwningBufferTest.CopyCreatesIndependentMemory" start time: Sep 07 06:33 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/vboxuser/Desktop/CHAT/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = OwningBufferTest.CopyCreatesIndependentMemory
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from OwningBufferTest
+[ RUN      ] OwningBufferTest.CopyCreatesIndependentMemory
+[       OK ] OwningBufferTest.CopyCreatesIndependentMemory (0 ms)
+[----------] 1 test from OwningBufferTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"OwningBufferTest.CopyCreatesIndependentMemory" end time: Sep 07 06:33 UTC
+"OwningBufferTest.CopyCreatesIndependentMemory" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/8 Testing: ChatStoreTest.CreateAndPost
+6/8 Test: ChatStoreTest.CreateAndPost
+Command: "/home/vboxuser/Desktop/CHAT/build/chat_tests" "--gtest_filter=ChatStoreTest.CreateAndPost" "--gtest_also_run_disabled_tests"
+Directory: /home/vboxuser/Desktop/CHAT/build
+"ChatStoreTest.CreateAndPost" start time: Sep 07 06:33 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/vboxuser/Desktop/CHAT/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ChatStoreTest.CreateAndPost
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ChatStoreTest
+[ RUN      ] ChatStoreTest.CreateAndPost
+[       OK ] ChatStoreTest.CreateAndPost (0 ms)
+[----------] 1 test from ChatStoreTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ChatStoreTest.CreateAndPost" end time: Sep 07 06:33 UTC
+"ChatStoreTest.CreateAndPost" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/8 Testing: ChatStoreTest.HistoryReturnsNullForNonexistentRoom
+7/8 Test: ChatStoreTest.HistoryReturnsNullForNonexistentRoom
+Command: "/home/vboxuser/Desktop/CHAT/build/chat_tests" "--gtest_filter=ChatStoreTest.HistoryReturnsNullForNonexistentRoom" "--gtest_also_run_disabled_tests"
+Directory: /home/vboxuser/Desktop/CHAT/build
+"ChatStoreTest.HistoryReturnsNullForNonexistentRoom" start time: Sep 07 06:33 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/vboxuser/Desktop/CHAT/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ChatStoreTest.HistoryReturnsNullForNonexistentRoom
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ChatStoreTest
+[ RUN      ] ChatStoreTest.HistoryReturnsNullForNonexistentRoom
+[       OK ] ChatStoreTest.HistoryReturnsNullForNonexistentRoom (0 ms)
+[----------] 1 test from ChatStoreTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ChatStoreTest.HistoryReturnsNullForNonexistentRoom" end time: Sep 07 06:33 UTC
+"ChatStoreTest.HistoryReturnsNullForNonexistentRoom" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/8 Testing: ChatStoreTest.RoomCount
+8/8 Test: ChatStoreTest.RoomCount
+Command: "/home/vboxuser/Desktop/CHAT/build/chat_tests" "--gtest_filter=ChatStoreTest.RoomCount" "--gtest_also_run_disabled_tests"
+Directory: /home/vboxuser/Desktop/CHAT/build
+"ChatStoreTest.RoomCount" start time: Sep 07 06:33 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/vboxuser/Desktop/CHAT/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ChatStoreTest.RoomCount
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ChatStoreTest
+[ RUN      ] ChatStoreTest.RoomCount
+[       OK ] ChatStoreTest.RoomCount (0 ms)
+[----------] 1 test from ChatStoreTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ChatStoreTest.RoomCount" end time: Sep 07 06:33 UTC
+"ChatStoreTest.RoomCount" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 07 06:33 UTC

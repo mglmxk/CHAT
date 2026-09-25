@@ -1,0 +1,9 @@
+cat > .gitignore << 'EOF'
+build/
+*.o
+*.a
+*.so
+chat_cli
+chat_tests
+.vscode/
+EOF

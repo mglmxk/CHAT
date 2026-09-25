@@ -1,0 +1,4 @@
+/home/vboxuser/Desktop/CHAT/build/CMakeFiles/chat_core.dir
+/home/vboxuser/Desktop/CHAT/build/CMakeFiles/chat_cli.dir
+/home/vboxuser/Desktop/CHAT/build/CMakeFiles/edit_cache.dir
+/home/vboxuser/Desktop/CHAT/build/CMakeFiles/rebuild_cache.dir
