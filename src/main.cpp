@@ -1,48 +1,97 @@
-#include "chat_store.hpp"
-#include "owning_buffer.hpp"
+#include "chat_app.hpp"
 #include <iostream>
 #include <string>
+#include <cassert>
 
-int main() {
+void demonstrateSmartPointers() {
+    std::cout << "=== Демонстрация умных указателей ===\n";
+    
+    std::vector<std::unique_ptr<IMessage>> messages;
+    messages.push_back(make_text("Никита", "Привет!"));
+    messages.push_back(make_system("Системное уведомление"));
+    messages.push_back(make_reaction("Миша", "", 5));
+    
+    for (const auto& msg : messages) {
+        std::cout << "  [" << msg->typeName() << "] " 
+                  << msg->author() << ": " << msg->render() << "\n";
+    }
+    std::cout << "\n";
+
+    std::cout << "--- Пользователи ---\n";
+    UserPtr nikita = std::make_shared<User>("Никита");
+    UserPtr misha = std::make_shared<User>("Миша");
+    
     ChatStore store;
     store.create_room("general");
-    store.create_room("random");
-
-    store.post("general", Message("Миша", "Привет всем!"));
-    store.post("general", Message("Никита", "Привет, Миша!"));
-    store.post("random", Message("семен", "Случайное сообщение"));
-
-    int total_messages_ref = 0;
-    store.for_each_room([&total_messages_ref](const std::string& name, const std::vector<Message>& msgs) {
-        total_messages_ref += msgs.size();
-        std::cout << "Комната '" << name << "': " << msgs.size() << " сообщений\n";
-    });
-    std::cout << "Всего сообщений (по ссылке): " << total_messages_ref << "\n\n";
-
-    int total_messages_val = 0;
-    store.for_each_room([total_messages_val](const std::string& name, const std::vector<Message>& msgs) mutable {
-        total_messages_val += msgs.size();
-        std::cout << "Комната '" << name << "': " << msgs.size() << " сообщений\n";
-    });
-    std::cout << "Всего сообщений: " << total_messages_val << "\n\n";
-
-    std::cout << "=== OwningBuffer ===\n";
-    OwningBuffer buf1(5);
-    buf1.data()[0] = 'A';
-    buf1.data()[1] = 'B';
+    store.add_participant("general", nikita);
+    store.add_participant("general", misha);
     
-    OwningBuffer buf2(buf1);  
-    buf2.data()[0] = 'X';    
+    std::cout << "Активных участников: " 
+              << store.active_participants("general") << "\n";
     
-    std::cout << "buf1[0]: " << buf1.data()[0] << "\n";
-    std::cout << "buf2[0]: " << buf2.data()[0] << "\n";
+    nikita.reset();
+    std::cout << "После удаления Nikita: " 
+              << store.active_participants("general") << "\n";
     
-    buf1 = buf1;
-    std::cout << "После самоприсваивания buf1[0]: " << buf1.data()[0] << "\n";
+    store.cleanup_participants("general");
+    std::cout << "После cleanup: " 
+              << store.active_participants("general") << "\n\n";
+    std::cout << "--- sizeof unique_ptr с делетерами ---\n";
+    std::cout << "sizeof(unique_ptr<FILE, FileCloser>): " 
+              << sizeof(UniqueFile) << " байт\n";
+    std::cout << "sizeof(unique_ptr<FILE, void(*)(FILE*)>): " 
+              << sizeof(std::unique_ptr<FILE, void(*)(FILE*)>) << " байт\n";
+    std::cout << "(функтор = 8 байт, указатель на функцию = 16 байт)\n\n";
+
+    std::cout << "--- RAII журнал ---\n";
+    {
+        AppendOnlyLog log("/tmp/chat_test.log");
+        log.append("Тестовая запись 1");
+        log.append("Тестовая запись 2");
+        std::cout << "Журнал закрыт при выходе из блока\n";
+    }
+    std::cout << "\n";
+}
+
+int main() {
+    demonstrateSmartPointers();
+
+    ChatApp app;
     
-    OwningBuffer buf3(std::move(buf2));
-    std::cout << "buf3 size: " << buf3.size() << "\n";
-    std::cout << "buf2 size: " << buf2.size() << "\n";
+    std::cout << "=== Интерактивный чат ===\n";
+    std::cout << "Команды: /join, /leave, /msg, /who, /history, /topic, /react\n";
+    std::cout << "Пример рассылки: /msg #room1 #room2 #room3 Текст сообщения\n";
+    std::cout << "Введите 'exit' для выхода.\n\n";
+
+    std::string line;
+    while (std::getline(std::cin, line)) {
+        if (!line.empty() && line.back() == '\r') {
+            line.pop_back();
+        }
+
+        if (line == "exit") {
+            break;
+        }
+
+        if (line.empty()) {
+            continue;
+        }
+
+        try {
+            auto cmd = CommandParser::parse(line);
+            if (cmd) {
+                app.execute(*cmd);
+            } else {
+                std::cout << "Пустой ввод.\n";
+            }
+        } catch (const ChatError& e) {
+            std::cout << "[ОШИБКА] " << e.what() << "\n";
+        } catch (const std::exception& e) {
+            std::cout << "[ОШИБКА] " << e.what() << "\n";
+        }
+
+        std::cout << "\n";
+    }
 
     return 0;
 }

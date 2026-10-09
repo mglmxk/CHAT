@@ -58,6 +58,6 @@ public:
     }
 
 private: 
-    char* data_;
-    size_t size_;
+    char* data_ = nullptr;
+    size_t size_ = 0;
 };
