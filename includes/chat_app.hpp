@@ -37,17 +37,18 @@ public:
                         std::cout << "  - " << name << " (" << msgs.size() << " msg)\n";
                     });
                 },
-                [this](const HistoryCommand& c) -> void {
-                    if (auto h = store_.history(c.room); h) {
-                        std::cout << "История '" << c.room << "':\n";
-                        size_t i = 0;
-                        for (const auto& msg : h->get()) {
-                            std::cout << "  [" << i++ << "] " 
-                                      << msg->author() << ": " 
-                                      << msg->render() << "\n";
-                        }
-                    } else {
-                        throw UnknownRoomError(c.room);
+               [this](const HistoryCommand& c) -> void {
+   
+                auto history = store_.history_with_filters(c.room);
+    
+                 std::cout << "История '" << c.room << "':\n";
+                if (history.empty()) {
+                std::cout << "  (пусто)\n";
+                 } else {
+                    size_t i = 0;
+                    for (const auto& msg : history) {
+                    std::cout << "  [" << i++ << "] " << msg << "\n";
+                 }
                     }
                 },
                 [this](const TopicCommand& c) -> void {

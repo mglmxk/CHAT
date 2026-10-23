@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/vboxuser/Desktop/CHAT/build",
+  "command": "/usr/bin/c++  -I/home/vboxuser/Desktop/CHAT/includes -std=c++23 -Wall -Wextra -Wshadow -o CMakeFiles/chat_core.dir/src/chat_core.cpp.o -c /home/vboxuser/Desktop/CHAT/src/chat_core.cpp",
+  "file": "/home/vboxuser/Desktop/CHAT/src/chat_core.cpp",
+  "output": "CMakeFiles/chat_core.dir/src/chat_core.cpp.o"
+},
+{
+  "directory": "/home/vboxuser/Desktop/CHAT/build",
+  "command": "/usr/bin/c++  -I/home/vboxuser/Desktop/CHAT/includes -std=c++23 -Wall -Wextra -Wshadow -o CMakeFiles/chat_cli.dir/src/main.cpp.o -c /home/vboxuser/Desktop/CHAT/src/main.cpp",
+  "file": "/home/vboxuser/Desktop/CHAT/src/main.cpp",
+  "output": "CMakeFiles/chat_cli.dir/src/main.cpp.o"
+}
+]

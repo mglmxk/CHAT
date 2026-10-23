@@ -8,10 +8,13 @@
 #include <chrono>
 #include <ctime>
 
+/**
+ * RAII-журнал сообщений.
+ */
 class AppendOnlyLog {
 public:
     explicit AppendOnlyLog(const std::string& filename)
-        : stream_(filename, std::ios::app) {
+        : filename_(filename), stream_(filename, std::ios::app) {
         if (!stream_.is_open()) {
             throw std::runtime_error("Cannot open log file: " + filename);
         }
@@ -26,7 +29,6 @@ public:
     ~AppendOnlyLog() {
         if (stream_.is_open()) {
             stream_.flush();
-        
         }
     }
 
@@ -34,22 +36,24 @@ public:
         if (!stream_.is_open()) {
             throw std::runtime_error("Log file is not open");
         }
-        
         auto now = std::chrono::system_clock::now();
         auto time = std::chrono::system_clock::to_time_t(now);
         char buf[64];
         std::strftime(buf, sizeof(buf), "%Y-%m-%d %H:%M:%S", std::localtime(&time));
-        
         stream_ << "[" << buf << "] " << entry << "\n";
-        stream_.flush(); 
+        stream_.flush();
     }
 
-    const std::string& filename() const { return stream_ ? "" : ""; }
+    const std::string& filename() const { return filename_; }
 
 private:
+    std::string filename_;
     std::ofstream stream_;
 };
 
+/**
+ * Делетер для FILE* через std::fclose.
+ */
 struct FileCloser {
     void operator()(FILE* f) const {
         if (f) std::fclose(f);
@@ -58,6 +62,10 @@ struct FileCloser {
 
 using UniqueFile = std::unique_ptr<FILE, FileCloser>;
 
+/**
+ * Открыть файл через std::fopen и завернуть в unique_ptr.
+ * sizeof(UniqueFile) = 8 байт (функтор бесплатный благодаря EBO).
+ */
 inline UniqueFile open_file(const char* path, const char* mode) {
     FILE* f = std::fopen(path, mode);
     if (!f) {

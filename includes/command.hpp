@@ -71,20 +71,20 @@ public:
             return LeaveCommand{std::string(tokens[1])};
         }
         if (cmd == "/msg") {
-            if (tokens.size() < 3) {
-                throw ParseError(std::string(input));
-            }
-
-            if (tokens.size() > 3) {
-                MultiMsgCommand cmd;
-                for (size_t i = 1; i < tokens.size() - 1; ++i) {
-                    cmd.rooms.push_back(std::string(tokens[i]));
-                }
-                cmd.text = std::string(tokens.back());
-                return cmd;
-            }
-            return MsgCommand{std::string(tokens[1]), std::string(tokens[2])};
+        if (tokens.size() < 3) {
+        throw ParseError(std::string(input));
+    }
+    
+    if (tokens.size() > 3) {
+        MultiMsgCommand multi;  
+        for (size_t i = 1; i < tokens.size() - 1; ++i) {
+            multi.rooms.push_back(std::string(tokens[i]));
         }
+        multi.text = std::string(tokens.back());
+        return multi;
+    }
+    return MsgCommand{std::string(tokens[1]), std::string(tokens[2])};
+}
         if (cmd == "/who") {
             return WhoCommand{};
         }
