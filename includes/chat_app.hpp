@@ -1,69 +1,31 @@
 #pragma once
 
 #include "chat_store.hpp"
-#include "command.hpp"
+#include "command_registry.hpp"
 #include "chat_errors.hpp"
+#include "lexer.hpp"
 #include <iostream>
 #include <string>
+#include <vector>
 
 class ChatApp {
 public:
-    void execute(const Command& cmd) {
-        try {
-            std::visit(overloaded{
-                [this](const JoinCommand& c) -> void {
-                    store_.create_room(c.room);
-                    std::cout << "Комната '" << c.room << "' создана.\n";
-                },
-                [this](const LeaveCommand& c) -> void {
-                    if (!store_.room_exists(c.room)) {
-                        throw UnknownRoomError(c.room);
-                    }
-                    std::cout << "Вы покинули комнату '" << c.room << "'.\n";
-                },
-                [this](const MsgCommand& c) -> void {
-                    store_.post(c.room, make_text("User", c.text));
-                    std::cout << "Сообщение отправлено в '" << c.room << "'.\n";
-                },
-                [this](const MultiMsgCommand& c) -> void {
-                    auto msg = make_text("User", c.text);
-                    store_.multi_post(c.rooms, std::move(msg));
-                    std::cout << "Сообщение разослано в " << c.rooms.size() 
-                              << " комнат.\n";
-                },
-                [this](const WhoCommand&) -> void {
-                    std::cout << "Список комнат:\n";
-                    store_.for_each_room([](const std::string& name, const auto& msgs) {
-                        std::cout << "  - " << name << " (" << msgs.size() << " msg)\n";
-                    });
-                },
-               [this](const HistoryCommand& c) -> void {
-   
-                auto history = store_.history_with_filters(c.room);
+    ChatApp() {
+        register_all_commands();
+    }
     
-                 std::cout << "История '" << c.room << "':\n";
-                if (history.empty()) {
-                std::cout << "  (пусто)\n";
-                 } else {
-                    size_t i = 0;
-                    for (const auto& msg : history) {
-                    std::cout << "  [" << i++ << "] " << msg << "\n";
-                 }
-                    }
-                },
-                [this](const TopicCommand& c) -> void {
-                    if (!store_.room_exists(c.room)) {
-                        throw UnknownRoomError(c.room);
-                    }
-                    store_.post(c.room, make_system("Тема изменена на: " + c.topic));
-                    std::cout << "Тема комнаты '" << c.room 
-                              << "' изменена на: " << c.topic << "\n";
-                },
-                [this](const ReactCommand& c) -> void {
-                    store_.react(c.room, c.index, c.emoji);
-                    std::cout << "Реакция '" << c.emoji << "' добавлена.\n";
-                }
-            }, cmd);
+    void execute(const std::string& input) {
+        auto tokens = Lexer::tokenize(input);
+        if (tokens.empty()) {
+            std::cout << "Пустой ввод.\n";
+            return;
+        }
+        
+        std::string cmd_name(tokens[0]);
+        std::vector<std::string_view> args(tokens.begin() + 1, tokens.end());
+        
+        try {
+            registry_.execute(cmd_name, args);
         }
         catch (const ChatError& e) {
             std::cout << "[ОШИБКА] " << e.what() << "\n";
@@ -72,9 +34,61 @@ public:
             std::cout << "[ОШИБКА] " << e.what() << "\n";
         }
     }
-
+    
     ChatStore& store() { return store_; }
 
 private:
+    void register_all_commands() {
+        registry_.register_command("/join", [this](RoomName room) {
+            store_.create_room(room.str());
+            std::cout << "Комната '" << room.str() << "' создана.\n";
+        });
+
+        registry_.register_command("/leave", [this](RoomName room) {
+            if (!store_.room_exists(room.str())) throw UnknownRoomError(room.str());
+            std::cout << "Вы покинули комнату '" << room.str() << "'.\n";
+        });
+        
+        registry_.register_command("/msg", [this](RoomName room, std::string text) {
+            store_.post(room.str(), make_text("User", std::move(text)));
+            std::cout << "Сообщение отправлено в '" << room.str() << "'.\n";
+        });
+        
+        registry_.register_command("/who", [this]() {
+            std::cout << "Список комнат:\n";
+            store_.for_each_room([](const std::string& name, const auto& msgs) {
+                std::cout << "  - " << name << " (" << msgs.size() << " msg)\n";
+            });
+        });
+        
+        registry_.register_command("/history", [this](RoomName room) {
+            auto history = store_.history_with_filters(room.str());
+            std::cout << "История '" << room.str() << "':\n";
+            if (history.empty()) std::cout << "  (пусто)\n";
+            else {
+                size_t i = 0;
+                for (const auto& msg : history) std::cout << "  [" << i++ << "] " << msg << "\n";
+            }
+        });
+        
+        registry_.register_command("/topic", [this](RoomName room, std::string topic) {
+            if (!store_.room_exists(room.str())) throw UnknownRoomError(room.str());
+            store_.post(room.str(), make_system("Тема изменена на: " + topic));
+            std::cout << "Тема комнаты '" << room.str() << "' изменена на: " << topic << "\n";
+        });
+
+        registry_.register_command("/type", [this](RoomName room, size_t index) {
+            auto h = store_.history_with_filters(room.str());
+            if (index >= h.size()) throw ChatError("Index out of range");
+            std::cout << "Тип сообщения [" << index << "]: Text\n"; 
+        });
+        
+        registry_.register_command("/react", [this](RoomName room, size_t index, std::string emoji) {
+            store_.react(room.str(), index, emoji);
+            std::cout << "Реакция '" << emoji << "' добавлена.\n";
+        });
+    }
+    
     ChatStore store_;
+    CommandRegistry registry_;
 };

@@ -8,9 +8,6 @@
 #include <chrono>
 #include <ctime>
 
-/**
- * RAII-журнал сообщений.
- */
 class AppendOnlyLog {
 public:
     explicit AppendOnlyLog(const std::string& filename)
@@ -51,9 +48,6 @@ private:
     std::ofstream stream_;
 };
 
-/**
- * Делетер для FILE* через std::fclose.
- */
 struct FileCloser {
     void operator()(FILE* f) const {
         if (f) std::fclose(f);
@@ -62,10 +56,6 @@ struct FileCloser {
 
 using UniqueFile = std::unique_ptr<FILE, FileCloser>;
 
-/**
- * Открыть файл через std::fopen и завернуть в unique_ptr.
- * sizeof(UniqueFile) = 8 байт (функтор бесплатный благодаря EBO).
- */
 inline UniqueFile open_file(const char* path, const char* mode) {
     FILE* f = std::fopen(path, mode);
     if (!f) {

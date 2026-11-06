@@ -259,5 +259,6 @@ CMakeFiles/chat_cli.dir/src/main.cpp.o: \
  /usr/include/c++/13/bits/ranges_algo.h \
  /usr/include/c++/13/pstl/glue_algorithm_defs.h \
  /usr/include/c++/13/iostream \
- /home/vboxuser/Desktop/CHAT/includes/command.hpp \
+ /home/vboxuser/Desktop/CHAT/includes/command_registry.hpp \
+ /home/vboxuser/Desktop/CHAT/includes/function_traits.hpp \
  /home/vboxuser/Desktop/CHAT/includes/lexer.hpp

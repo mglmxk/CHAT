@@ -21,6 +21,5 @@ concept NickLike = requires(T t) {
     { t != t } -> std::same_as<bool>;
 };
 
-/// Диапазон сообщений — любое range.
 template<typename T>
 concept MessageRange = std::ranges::range<T>;

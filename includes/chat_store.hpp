@@ -15,11 +15,8 @@
 #include <memory>
 #include <algorithm>
 #include <ranges>
-#include <iostream>   // DEBUG-вывод ленивости в history_with_filters
+#include <iostream>   
 
-/**
- * Хранилище чат-комнат. Этап 5: концепции + ranges + проекции.
- */
 class ChatStore {
 public:
     ChatStore() = default;
@@ -52,7 +49,6 @@ public:
         it->second.messages.push_back(std::move(msg));
     }
 
-    /// Рассылка с СИЛЬНОЙ гарантией: либо во все комнаты, либо ни в одну.
     void multi_post(const std::vector<std::string>& room_names,
                     std::unique_ptr<IMessage> msg) {
         for (const auto& room : room_names)
@@ -80,25 +76,9 @@ public:
         if (!msg->isReaction())
             throw TypeMismatchError("ReactionMessage", msg->typeName());
         msg->incrementReaction();
-        (void)emoji;  // emoji не меняем при инкременте — заглушка от -Wunused-parameter
+        (void)emoji;  
     }
 
-    /**
-     * История через ленивый ranges-конвейер: filter -> transform -> (take).
-     *
-     * Почему не std::vector(begin, end): конвейер filter по vector<unique_ptr>
-     * (move-only элементы) даёт input_range, а конструктор вектора требует
-     * forward_iterator — отсюда простыня ошибок из <vector>.
-     *
-     * Почему не std::ranges::to: ranges::to появился в GCC только с версии 14,
-     * а у нас 13.3. Поэтому логика фильтрации/трансформации/ограничения целиком
-     * остаётся в ленивых views (как требует ТЗ), а финальная материализация —
-     * range-for'ом как вынужденная мера ограничения компилятора. На GCC 14+
-     * оба цикла заменяются на std::ranges::to<std::vector<std::string>>(view).
-     *
-     * Ленивость проверяется DEBUG-Println в предикате: при take(3) на 15
-     * сообщениях предикат вызывается ~6 раз, а не 15.
-     */
     std::vector<std::string> history_with_filters(
         const std::string& room_name,
         const std::string& author = "",
@@ -126,16 +106,7 @@ public:
         return result;
     }
 
-    /**
-     * Сортировка участников по длине ника через ranges::sort + ПРОЕКЦИЮ.
-     *
-     * Проекция vs лямбда-компаратор:
-     *   проекция:   ranges::sort(v, std::less{}, [](auto& s){ return s.size(); })
-     *   компаратор: sort(v.begin(), v.end(), [](auto& a, auto& b){ return a.size()<b.size(); })
-     * Проекция читается лучше: компаратор остаётся стандартным std::less{},
-     * а "по чему сравниваем" вынесено в отдельную короткую функцию-проекцию.
-     * Не надо дублировать извлечение поля в двух аргументах.
-     */
+
     std::vector<std::string> sorted_participants_by_nickname_length(
         const std::string& room_name) const
     {
@@ -210,18 +181,6 @@ private:
     std::unique_ptr<AppendOnlyLog> log_;
 };
 
-/**
- * ОПАСНОСТЬ ВИСЯЧЕГО ДИАПАЗОНА (ТЗ п.6).
- *
- * Возвращаем view на ЛОКАЛЬНЫЙ temp. После return temp уничтожен, view
- * указывает в мёртвую память. Компилятор ЭТО НЕ ЛОВИТ: std::vector не
- * является borrowed_range в смысле запрета возврата view, и gcc молча
- * компилирует функцию. В рантайме итерация = UB (heap-use-after-free под ASan).
- *
- * Вывод для комментария: "компилятор висячий view НЕ поймал — значит,
- * безопасность диапазона на совести программиста; владелец данных должен
- * жить дольше view".
- */
 inline auto dangling_range_demo() {
     std::vector<int> temp = {1, 2, 3, 4, 5};
     return temp | std::views::filter([](int x) { return x > 2; });
