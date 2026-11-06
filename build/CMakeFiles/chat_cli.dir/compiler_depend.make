@@ -5,6 +5,7 @@ CMakeFiles/chat_cli.dir/src/main.cpp.o: /home/vboxuser/Desktop/CHAT/src/main.cpp
   /home/vboxuser/Desktop/CHAT/includes/chat_app.hpp \
   /home/vboxuser/Desktop/CHAT/includes/chat_errors.hpp \
   /home/vboxuser/Desktop/CHAT/includes/chat_store.hpp \
+  /home/vboxuser/Desktop/CHAT/includes/colors.hpp \
   /home/vboxuser/Desktop/CHAT/includes/command_registry.hpp \
   /home/vboxuser/Desktop/CHAT/includes/concepts.hpp \
   /home/vboxuser/Desktop/CHAT/includes/function_traits.hpp \
@@ -458,6 +459,8 @@ CMakeFiles/chat_cli.dir/src/main.cpp.o:
 
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
+/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
 
 /usr/include/c++/13/bits/unique_ptr.h:
@@ -467,10 +470,6 @@ CMakeFiles/chat_cli.dir/src/main.cpp.o:
 /usr/include/c++/13/bits/streambuf.tcc:
 
 /usr/include/c++/13/bits/max_size_type.h:
-
-/usr/include/c++/13/bits/unordered_map.h:
-
-/usr/include/c++/13/bits/quoted_string.h:
 
 /lib/x86_64-linux-gnu/libc.so.6:
 
@@ -516,8 +515,6 @@ CMakeFiles/chat_cli.dir/src/main.cpp.o:
 
 /usr/include/c++/13/bits/shared_ptr.h:
 
-/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
-
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 
 /usr/include/c++/13/bits/string_view.tcc:
@@ -535,6 +532,10 @@ CMakeFiles/chat_cli.dir/src/main.cpp.o:
 /usr/include/c++/13/bits/stl_construct.h:
 
 /usr/include/c++/13/bits/range_access.h:
+
+/usr/include/c++/13/bits/quoted_string.h:
+
+/usr/include/c++/13/bits/unordered_map.h:
 
 /usr/include/c++/13/bits/ranges_uninitialized.h:
 
@@ -574,6 +575,14 @@ CMakeFiles/chat_cli.dir/src/main.cpp.o:
 
 /usr/include/c++/13/bits/iterator_concepts.h:
 
+/usr/include/c++/13/bits/ranges_algo.h:
+
+/usr/include/c++/13/bits/invoke.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h:
+
+/usr/include/x86_64-linux-gnu/bits/environments.h:
+
 /usr/include/c++/13/bits/predefined_ops.h:
 
 /home/vboxuser/Desktop/CHAT/includes/message_id.hpp:
@@ -605,6 +614,10 @@ CMakeFiles/chat_cli.dir/src/main.cpp.o:
 /home/vboxuser/Desktop/CHAT/src/main.cpp:
 
 /usr/include/c++/13/bits/exception.h:
+
+/usr/include/c++/13/bits/memory_resource.h:
+
+/usr/include/c++/13/streambuf:
 
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
@@ -648,6 +661,12 @@ CMakeFiles/chat_cli.dir/src/main.cpp.o:
 
 /usr/include/c++/13/bits/basic_ios.h:
 
+/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
+
+/home/vboxuser/Desktop/CHAT/includes/chat_store.hpp:
+
+/usr/include/c++/13/bits/cxxabi_forced.h:
+
 /usr/include/x86_64-linux-gnu/bits/uio_lim.h:
 
 /usr/include/c++/13/bits/stream_iterator.h:
@@ -664,6 +683,12 @@ CMakeFiles/chat_cli.dir/src/main.cpp.o:
 
 /usr/include/c++/13/cstdio:
 
+/usr/include/wchar.h:
+
+/usr/include/c++/13/bits/shared_ptr_base.h:
+
+/home/vboxuser/Desktop/CHAT/includes/lexer.hpp:
+
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 
 /usr/include/c++/13/bits/exception_defines.h:
@@ -675,12 +700,6 @@ CMakeFiles/chat_cli.dir/src/main.cpp.o:
 /home/vboxuser/Desktop/CHAT/includes/function_traits.hpp:
 
 /usr/include/c++/13/ext/string_conversions.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
-
-/home/vboxuser/Desktop/CHAT/includes/chat_store.hpp:
-
-/usr/include/c++/13/bits/cxxabi_forced.h:
 
 /usr/include/c++/13/bits/stl_raw_storage_iter.h:
 
@@ -716,6 +735,8 @@ CMakeFiles/chat_cli.dir/src/main.cpp.o:
 
 /home/vboxuser/Desktop/CHAT/includes/imessage.hpp:
 
+/home/vboxuser/Desktop/CHAT/includes/colors.hpp:
+
 /usr/include/c++/13/bits/stl_function.h:
 
 /usr/include/c++/13/bits/move.h:
@@ -745,24 +766,6 @@ CMakeFiles/chat_cli.dir/src/main.cpp.o:
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
 
 /usr/include/c++/13/bits/chrono_io.h:
-
-/usr/include/c++/13/streambuf:
-
-/usr/include/c++/13/bits/memory_resource.h:
-
-/usr/include/c++/13/bits/shared_ptr_base.h:
-
-/home/vboxuser/Desktop/CHAT/includes/lexer.hpp:
-
-/usr/include/wchar.h:
-
-/usr/include/c++/13/bits/ranges_algo.h:
-
-/usr/include/c++/13/bits/invoke.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h:
-
-/usr/include/x86_64-linux-gnu/bits/environments.h:
 
 /usr/include/alloca.h:
 

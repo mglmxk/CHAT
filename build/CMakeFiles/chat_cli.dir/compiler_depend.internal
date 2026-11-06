@@ -6,6 +6,7 @@ CMakeFiles/chat_cli.dir/src/main.cpp.o
  /home/vboxuser/Desktop/CHAT/includes/chat_app.hpp
  /home/vboxuser/Desktop/CHAT/includes/chat_errors.hpp
  /home/vboxuser/Desktop/CHAT/includes/chat_store.hpp
+ /home/vboxuser/Desktop/CHAT/includes/colors.hpp
  /home/vboxuser/Desktop/CHAT/includes/command_registry.hpp
  /home/vboxuser/Desktop/CHAT/includes/concepts.hpp
  /home/vboxuser/Desktop/CHAT/includes/function_traits.hpp
