@@ -5,11 +5,13 @@ CMakeFiles/chat_core.dir/src/chat_core.cpp.o: /home/vboxuser/Desktop/CHAT/src/ch
   /home/vboxuser/Desktop/CHAT/includes/chat_errors.hpp \
   /home/vboxuser/Desktop/CHAT/includes/chat_store.hpp \
   /home/vboxuser/Desktop/CHAT/includes/concepts.hpp \
+  /home/vboxuser/Desktop/CHAT/includes/history_iterator.hpp \
   /home/vboxuser/Desktop/CHAT/includes/imessage.hpp \
   /home/vboxuser/Desktop/CHAT/includes/log.hpp \
   /home/vboxuser/Desktop/CHAT/includes/message.hpp \
   /home/vboxuser/Desktop/CHAT/includes/message_id.hpp \
   /home/vboxuser/Desktop/CHAT/includes/owning_buffer.hpp \
+  /home/vboxuser/Desktop/CHAT/includes/ring_buffer.hpp \
   /home/vboxuser/Desktop/CHAT/includes/user.hpp \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
@@ -407,9 +409,9 @@ CMakeFiles/chat_core.dir/src/chat_core.cpp.o: /home/vboxuser/Desktop/CHAT/src/ch
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
 
-/usr/include/c++/13/bits/uses_allocator_args.h:
+/usr/include/x86_64-linux-gnu/bits/syscall.h:
 
-/usr/include/c++/13/bits/atomic_base.h:
+/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
 
@@ -424,10 +426,6 @@ CMakeFiles/chat_core.dir/src/chat_core.cpp.o: /home/vboxuser/Desktop/CHAT/src/ch
 /usr/include/c++/13/bits/unordered_map.h:
 
 /usr/include/c++/13/bits/quoted_string.h:
-
-/usr/include/c++/13/bits/new_allocator.h:
-
-/usr/include/c++/13/bits/stl_uninitialized.h:
 
 /usr/include/c++/13/bits/stl_map.h:
 
@@ -501,6 +499,14 @@ CMakeFiles/chat_core.dir/src/chat_core.cpp.o: /home/vboxuser/Desktop/CHAT/src/ch
 
 /usr/include/c++/13/numbers:
 
+/usr/include/c++/13/bits/stl_uninitialized.h:
+
+/usr/include/c++/13/bits/new_allocator.h:
+
+/usr/include/c++/13/bits/atomic_base.h:
+
+/usr/include/c++/13/bits/uses_allocator_args.h:
+
 /usr/include/c++/13/bits/mofunc_impl.h:
 
 /usr/include/c++/13/bits/stl_iterator_base_types.h:
@@ -511,9 +517,9 @@ CMakeFiles/chat_core.dir/src/chat_core.cpp.o: /home/vboxuser/Desktop/CHAT/src/ch
 
 /usr/include/c++/13/bits/locale_facets.h:
 
-/usr/include/c++/13/bits/atomic_lockfree_defines.h:
+/usr/include/x86_64-linux-gnu/bits/timesize.h:
 
-/usr/include/x86_64-linux-gnu/asm/errno.h:
+/usr/include/c++/13/bits/locale_classes.h:
 
 /usr/include/c++/13/bits/predefined_ops.h:
 
@@ -535,21 +541,9 @@ CMakeFiles/chat_core.dir/src/chat_core.cpp.o: /home/vboxuser/Desktop/CHAT/src/ch
 
 /usr/include/c++/13/bits/locale_classes.tcc:
 
-/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
-
-/usr/include/c++/13/bits/charconv.h:
-
-/usr/include/c++/13/cstdio:
-
-/usr/include/c++/13/bits/basic_string.tcc:
-
 /usr/include/x86_64-linux-gnu/bits/uio_lim.h:
 
 /usr/include/c++/13/bits/stream_iterator.h:
-
-/usr/include/c++/13/bits/stl_raw_storage_iter.h:
-
-/usr/include/c++/13/algorithm:
 
 /usr/include/x86_64-linux-gnu/bits/long-double.h:
 
@@ -583,8 +577,6 @@ CMakeFiles/chat_core.dir/src/chat_core.cpp.o: /home/vboxuser/Desktop/CHAT/src/ch
 
 /usr/include/linux/posix_types.h:
 
-/usr/include/c++/13/bits/locale_facets_nonio.tcc:
-
 /usr/include/c++/13/bits/stl_heap.h:
 
 /usr/include/c++/13/utility:
@@ -596,10 +588,6 @@ CMakeFiles/chat_core.dir/src/chat_core.cpp.o: /home/vboxuser/Desktop/CHAT/src/ch
 /usr/include/c++/13/bits/ranges_cmp.h:
 
 /usr/include/asm-generic/int-ll64.h:
-
-/usr/include/c++/13/bit:
-
-/usr/include/c++/13/bits/allocated_ptr.h:
 
 /usr/include/x86_64-linux-gnu/sys/syscall.h:
 
@@ -617,6 +605,24 @@ CMakeFiles/chat_core.dir/src/chat_core.cpp.o: /home/vboxuser/Desktop/CHAT/src/ch
 
 /usr/include/c++/13/bits/cxxabi_forced.h:
 
+/usr/include/c++/13/bits/stl_raw_storage_iter.h:
+
+/usr/include/c++/13/algorithm:
+
+/usr/include/c++/13/array:
+
+/usr/include/c++/13/bits/hash_bytes.h:
+
+/home/vboxuser/Desktop/CHAT/includes/history_iterator.hpp:
+
+/home/vboxuser/Desktop/CHAT/includes/message.hpp:
+
+/usr/include/c++/13/concepts:
+
+/usr/include/c++/13/memory:
+
+/usr/include/x86_64-linux-gnu/bits/floatn.h:
+
 /home/vboxuser/Desktop/CHAT/includes/imessage.hpp:
 
 /usr/include/c++/13/bits/stl_function.h:
@@ -624,6 +630,8 @@ CMakeFiles/chat_core.dir/src/chat_core.cpp.o: /home/vboxuser/Desktop/CHAT/src/ch
 /usr/include/c++/13/bits/move.h:
 
 /home/vboxuser/Desktop/CHAT/includes/log.hpp:
+
+/usr/include/c++/13/backward/auto_ptr.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
 
@@ -641,13 +649,41 @@ CMakeFiles/chat_core.dir/src/chat_core.cpp.o: /home/vboxuser/Desktop/CHAT/src/ch
 
 /usr/include/c++/13/bits/basic_ios.h:
 
-/usr/include/c++/13/backward/auto_ptr.h:
-
 /usr/include/c++/13/bits/stringfwd.h:
 
 /usr/include/c++/13/bits/iterator_concepts.h:
 
 /home/vboxuser/Desktop/CHAT/includes/owning_buffer.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
+
+/usr/include/c++/13/bits/charconv.h:
+
+/usr/include/c++/13/cstdio:
+
+/usr/include/c++/13/bits/hashtable_policy.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h:
+
+/usr/include/c++/13/bits/std_function.h:
+
+/usr/include/c++/13/bits/char_traits.h:
+
+/usr/include/c++/13/bits/exception.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+
+/usr/include/c++/13/bits/cxxabi_init_exception.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h:
+
+/usr/include/c++/13/typeinfo:
+
+/usr/include/time.h:
+
+/usr/include/x86_64-linux-gnu/bits/setjmp.h:
+
+/usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
 
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 
@@ -657,9 +693,15 @@ CMakeFiles/chat_core.dir/src/chat_core.cpp.o: /home/vboxuser/Desktop/CHAT/src/ch
 
 /home/vboxuser/Desktop/CHAT/includes/chat_errors.hpp:
 
-/usr/include/c++/13/array:
+/usr/include/c++/13/bits/atomic_lockfree_defines.h:
 
-/usr/include/c++/13/bits/hash_bytes.h:
+/usr/include/x86_64-linux-gnu/asm/errno.h:
+
+/usr/include/c++/13/bits/allocated_ptr.h:
+
+/usr/include/c++/13/bit:
+
+/usr/include/c++/13/bits/basic_string.tcc:
 
 /usr/include/c++/13/bits/basic_string.h:
 
@@ -670,6 +712,10 @@ CMakeFiles/chat_core.dir/src/chat_core.cpp.o: /home/vboxuser/Desktop/CHAT/src/ch
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
 
 /usr/include/c++/13/bits/chrono_io.h:
+
+/usr/include/c++/13/streambuf:
+
+/usr/include/c++/13/bits/memory_resource.h:
 
 /usr/include/c++/13/bits/ranges_algo.h:
 
@@ -691,14 +737,6 @@ CMakeFiles/chat_core.dir/src/chat_core.cpp.o: /home/vboxuser/Desktop/CHAT/src/ch
 
 /usr/include/c++/13/bits/fstream.tcc:
 
-/usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h:
-
-/usr/include/c++/13/bits/std_function.h:
-
-/usr/include/c++/13/bits/char_traits.h:
-
-/usr/include/c++/13/bits/hashtable_policy.h:
-
 /usr/include/c++/13/bits/stl_vector.h:
 
 /usr/include/c++/13/bits/stl_tempbuf.h:
@@ -717,25 +755,11 @@ CMakeFiles/chat_core.dir/src/chat_core.cpp.o: /home/vboxuser/Desktop/CHAT/src/ch
 
 /usr/include/c++/13/bits/cpp_type_traits.h:
 
-/usr/include/c++/13/bits/cxxabi_init_exception.h:
+/usr/include/c++/13/bits/locale_facets_nonio.tcc:
 
-/usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h:
+/home/vboxuser/Desktop/CHAT/includes/ring_buffer.hpp:
 
-/usr/include/c++/13/typeinfo:
-
-/usr/include/time.h:
-
-/usr/include/x86_64-linux-gnu/bits/setjmp.h:
-
-/usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
-
-/usr/include/c++/13/bits/exception.h:
-
-/usr/include/c++/13/bits/memory_resource.h:
-
-/usr/include/c++/13/streambuf:
-
-/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+/usr/include/pthread.h:
 
 /usr/include/c++/13/bits/functional_hash.h:
 
@@ -744,10 +768,6 @@ CMakeFiles/chat_core.dir/src/chat_core.cpp.o: /home/vboxuser/Desktop/CHAT/src/ch
 /usr/include/x86_64-linux-gnu/bits/types/error_t.h:
 
 /usr/include/c++/13/bits/hashtable.h:
-
-/usr/include/x86_64-linux-gnu/bits/timesize.h:
-
-/usr/include/c++/13/bits/locale_classes.h:
 
 /usr/include/c++/13/optional:
 
@@ -766,14 +786,6 @@ CMakeFiles/chat_core.dir/src/chat_core.cpp.o: /home/vboxuser/Desktop/CHAT/src/ch
 /usr/include/c++/13/system_error:
 
 /usr/include/c++/13/compare:
-
-/home/vboxuser/Desktop/CHAT/includes/message.hpp:
-
-/usr/include/c++/13/concepts:
-
-/usr/include/c++/13/memory:
-
-/usr/include/x86_64-linux-gnu/bits/floatn.h:
 
 /usr/include/c++/13/ctime:
 
@@ -853,8 +865,6 @@ CMakeFiles/chat_core.dir/src/chat_core.cpp.o: /home/vboxuser/Desktop/CHAT/src/ch
 
 /usr/include/c++/13/pstl/glue_memory_defs.h:
 
-/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
-
 /usr/include/c++/13/pstl/pstl_config.h:
 
 /usr/include/c++/13/ranges:
@@ -925,8 +935,6 @@ CMakeFiles/chat_core.dir/src/chat_core.cpp.o: /home/vboxuser/Desktop/CHAT/src/ch
 
 /usr/include/linux/types.h:
 
-/usr/include/pthread.h:
-
 /usr/include/wctype.h:
 
 /usr/include/sched.h:
@@ -972,5 +980,3 @@ CMakeFiles/chat_core.dir/src/chat_core.cpp.o: /home/vboxuser/Desktop/CHAT/src/ch
 /usr/include/x86_64-linux-gnu/bits/timex.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
-
-/usr/include/x86_64-linux-gnu/bits/syscall.h:

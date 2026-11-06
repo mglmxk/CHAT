@@ -248,6 +248,8 @@ CMakeFiles/chat_core.dir/src/chat_core.cpp.o: \
  /usr/include/c++/13/ranges /usr/include/c++/13/iterator \
  /usr/include/c++/13/bits/stream_iterator.h \
  /home/vboxuser/Desktop/CHAT/includes/message_id.hpp \
+ /home/vboxuser/Desktop/CHAT/includes/ring_buffer.hpp \
+ /home/vboxuser/Desktop/CHAT/includes/history_iterator.hpp \
  /usr/include/c++/13/map /usr/include/c++/13/bits/stl_tree.h \
  /usr/include/c++/13/bits/node_handle.h \
  /usr/include/c++/13/bits/stl_map.h \

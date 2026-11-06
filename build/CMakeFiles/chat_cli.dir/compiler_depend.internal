@@ -9,10 +9,12 @@ CMakeFiles/chat_cli.dir/src/main.cpp.o
  /home/vboxuser/Desktop/CHAT/includes/command_registry.hpp
  /home/vboxuser/Desktop/CHAT/includes/concepts.hpp
  /home/vboxuser/Desktop/CHAT/includes/function_traits.hpp
+ /home/vboxuser/Desktop/CHAT/includes/history_iterator.hpp
  /home/vboxuser/Desktop/CHAT/includes/imessage.hpp
  /home/vboxuser/Desktop/CHAT/includes/lexer.hpp
  /home/vboxuser/Desktop/CHAT/includes/log.hpp
  /home/vboxuser/Desktop/CHAT/includes/message_id.hpp
+ /home/vboxuser/Desktop/CHAT/includes/ring_buffer.hpp
  /home/vboxuser/Desktop/CHAT/includes/user.hpp
  /usr/include/alloca.h
  /usr/include/asm-generic/bitsperlong.h

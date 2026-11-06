@@ -142,6 +142,43 @@ chat_cli/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_cli.dir/build.make CMakeFiles/chat_cli.dir/build
 .PHONY : chat_cli/fast
 
+#=============================================================================
+# Target rules for targets named benchmark
+
+# Build rule for target.
+benchmark: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 benchmark
+.PHONY : benchmark
+
+# fast build rule for target.
+benchmark/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/build
+.PHONY : benchmark/fast
+
+src/benchmark.o: src/benchmark.cpp.o
+.PHONY : src/benchmark.o
+
+# target to build an object file
+src/benchmark.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/benchmark.cpp.o
+.PHONY : src/benchmark.cpp.o
+
+src/benchmark.i: src/benchmark.cpp.i
+.PHONY : src/benchmark.i
+
+# target to preprocess a source file
+src/benchmark.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/benchmark.cpp.i
+.PHONY : src/benchmark.cpp.i
+
+src/benchmark.s: src/benchmark.cpp.s
+.PHONY : src/benchmark.s
+
+# target to generate assembly for a file
+src/benchmark.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/benchmark.cpp.s
+.PHONY : src/benchmark.cpp.s
+
 src/chat_core.o: src/chat_core.cpp.o
 .PHONY : src/chat_core.o
 
@@ -198,8 +235,12 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... benchmark"
 	@echo "... chat_cli"
 	@echo "... chat_core"
+	@echo "... src/benchmark.o"
+	@echo "... src/benchmark.i"
+	@echo "... src/benchmark.s"
 	@echo "... src/chat_core.o"
 	@echo "... src/chat_core.i"
 	@echo "... src/chat_core.s"

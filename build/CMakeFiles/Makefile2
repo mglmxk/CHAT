@@ -65,11 +65,13 @@ CMAKE_BINARY_DIR = /home/vboxuser/Desktop/CHAT/build
 # The main recursive "all" target.
 all: CMakeFiles/chat_core.dir/all
 all: CMakeFiles/chat_cli.dir/all
+all: CMakeFiles/benchmark.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
 codegen: CMakeFiles/chat_core.dir/codegen
 codegen: CMakeFiles/chat_cli.dir/codegen
+codegen: CMakeFiles/benchmark.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -79,6 +81,7 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/chat_core.dir/clean
 clean: CMakeFiles/chat_cli.dir/clean
+clean: CMakeFiles/benchmark.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -88,7 +91,7 @@ clean: CMakeFiles/chat_cli.dir/clean
 CMakeFiles/chat_core.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_core.dir/build.make CMakeFiles/chat_core.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_core.dir/build.make CMakeFiles/chat_core.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=3,4 "Built target chat_core"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=5,6 "Built target chat_core"
 .PHONY : CMakeFiles/chat_core.dir/all
 
 # Build rule for subdir invocation for target.
@@ -105,7 +108,7 @@ chat_core: CMakeFiles/chat_core.dir/rule
 # codegen rule for target.
 CMakeFiles/chat_core.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_core.dir/build.make CMakeFiles/chat_core.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=3,4 "Finished codegen for target chat_core"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=5,6 "Finished codegen for target chat_core"
 .PHONY : CMakeFiles/chat_core.dir/codegen
 
 # clean rule for target.
@@ -120,7 +123,7 @@ CMakeFiles/chat_core.dir/clean:
 CMakeFiles/chat_cli.dir/all: CMakeFiles/chat_core.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_cli.dir/build.make CMakeFiles/chat_cli.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_cli.dir/build.make CMakeFiles/chat_cli.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=1,2 "Built target chat_cli"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=3,4 "Built target chat_cli"
 .PHONY : CMakeFiles/chat_cli.dir/all
 
 # Build rule for subdir invocation for target.
@@ -137,13 +140,45 @@ chat_cli: CMakeFiles/chat_cli.dir/rule
 # codegen rule for target.
 CMakeFiles/chat_cli.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_cli.dir/build.make CMakeFiles/chat_cli.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=1,2 "Finished codegen for target chat_cli"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=3,4 "Finished codegen for target chat_cli"
 .PHONY : CMakeFiles/chat_cli.dir/codegen
 
 # clean rule for target.
 CMakeFiles/chat_cli.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_cli.dir/build.make CMakeFiles/chat_cli.dir/clean
 .PHONY : CMakeFiles/chat_cli.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/benchmark.dir
+
+# All Build rule for target.
+CMakeFiles/benchmark.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=1,2 "Built target benchmark"
+.PHONY : CMakeFiles/benchmark.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/benchmark.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vboxuser/Desktop/CHAT/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/benchmark.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vboxuser/Desktop/CHAT/build/CMakeFiles 0
+.PHONY : CMakeFiles/benchmark.dir/rule
+
+# Convenience name for target.
+benchmark: CMakeFiles/benchmark.dir/rule
+.PHONY : benchmark
+
+# codegen rule for target.
+CMakeFiles/benchmark.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=1,2 "Finished codegen for target benchmark"
+.PHONY : CMakeFiles/benchmark.dir/codegen
+
+# clean rule for target.
+CMakeFiles/benchmark.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/clean
+.PHONY : CMakeFiles/benchmark.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
