@@ -72,31 +72,34 @@ include CMakeFiles/chat_cli.dir/flags.make
 CMakeFiles/chat_cli.dir/codegen:
 .PHONY : CMakeFiles/chat_cli.dir/codegen
 
-CMakeFiles/chat_cli.dir/src/main.cpp.o: CMakeFiles/chat_cli.dir/flags.make
-CMakeFiles/chat_cli.dir/src/main.cpp.o: /home/vboxuser/Desktop/CHAT/src/main.cpp
-CMakeFiles/chat_cli.dir/src/main.cpp.o: CMakeFiles/chat_cli.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/chat_cli.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chat_cli.dir/src/main.cpp.o -MF CMakeFiles/chat_cli.dir/src/main.cpp.o.d -o CMakeFiles/chat_cli.dir/src/main.cpp.o -c /home/vboxuser/Desktop/CHAT/src/main.cpp
+CMakeFiles/chat_cli.dir/apps/chat_cli.cpp.o: CMakeFiles/chat_cli.dir/flags.make
+CMakeFiles/chat_cli.dir/apps/chat_cli.cpp.o: /home/vboxuser/Desktop/CHAT/apps/chat_cli.cpp
+CMakeFiles/chat_cli.dir/apps/chat_cli.cpp.o: CMakeFiles/chat_cli.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/chat_cli.dir/apps/chat_cli.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chat_cli.dir/apps/chat_cli.cpp.o -MF CMakeFiles/chat_cli.dir/apps/chat_cli.cpp.o.d -o CMakeFiles/chat_cli.dir/apps/chat_cli.cpp.o -c /home/vboxuser/Desktop/CHAT/apps/chat_cli.cpp
 
-CMakeFiles/chat_cli.dir/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/chat_cli.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vboxuser/Desktop/CHAT/src/main.cpp > CMakeFiles/chat_cli.dir/src/main.cpp.i
+CMakeFiles/chat_cli.dir/apps/chat_cli.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/chat_cli.dir/apps/chat_cli.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vboxuser/Desktop/CHAT/apps/chat_cli.cpp > CMakeFiles/chat_cli.dir/apps/chat_cli.cpp.i
 
-CMakeFiles/chat_cli.dir/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chat_cli.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vboxuser/Desktop/CHAT/src/main.cpp -o CMakeFiles/chat_cli.dir/src/main.cpp.s
+CMakeFiles/chat_cli.dir/apps/chat_cli.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chat_cli.dir/apps/chat_cli.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vboxuser/Desktop/CHAT/apps/chat_cli.cpp -o CMakeFiles/chat_cli.dir/apps/chat_cli.cpp.s
 
 # Object files for target chat_cli
 chat_cli_OBJECTS = \
-"CMakeFiles/chat_cli.dir/src/main.cpp.o"
+"CMakeFiles/chat_cli.dir/apps/chat_cli.cpp.o"
 
 # External object files for target chat_cli
 chat_cli_EXTERNAL_OBJECTS =
 
-chat_cli: CMakeFiles/chat_cli.dir/src/main.cpp.o
+chat_cli: CMakeFiles/chat_cli.dir/apps/chat_cli.cpp.o
 chat_cli: CMakeFiles/chat_cli.dir/build.make
 chat_cli: CMakeFiles/chat_cli.dir/compiler_depend.ts
-chat_cli: libchat_core.a
+chat_cli: libinfrastructure.a
+chat_cli: libapplication.a
+chat_cli: libdomain.a
+chat_cli: /usr/lib/x86_64-linux-gnu/librdkafka.so
 chat_cli: CMakeFiles/chat_cli.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable chat_cli"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/chat_cli.dir/link.txt --verbose=$(VERBOSE)

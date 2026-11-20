@@ -72,31 +72,34 @@ include CMakeFiles/benchmark.dir/flags.make
 CMakeFiles/benchmark.dir/codegen:
 .PHONY : CMakeFiles/benchmark.dir/codegen
 
-CMakeFiles/benchmark.dir/src/benchmark.cpp.o: CMakeFiles/benchmark.dir/flags.make
-CMakeFiles/benchmark.dir/src/benchmark.cpp.o: /home/vboxuser/Desktop/CHAT/src/benchmark.cpp
-CMakeFiles/benchmark.dir/src/benchmark.cpp.o: CMakeFiles/benchmark.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/benchmark.dir/src/benchmark.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/benchmark.dir/src/benchmark.cpp.o -MF CMakeFiles/benchmark.dir/src/benchmark.cpp.o.d -o CMakeFiles/benchmark.dir/src/benchmark.cpp.o -c /home/vboxuser/Desktop/CHAT/src/benchmark.cpp
+CMakeFiles/benchmark.dir/apps/benchmark.cpp.o: CMakeFiles/benchmark.dir/flags.make
+CMakeFiles/benchmark.dir/apps/benchmark.cpp.o: /home/vboxuser/Desktop/CHAT/apps/benchmark.cpp
+CMakeFiles/benchmark.dir/apps/benchmark.cpp.o: CMakeFiles/benchmark.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/benchmark.dir/apps/benchmark.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/benchmark.dir/apps/benchmark.cpp.o -MF CMakeFiles/benchmark.dir/apps/benchmark.cpp.o.d -o CMakeFiles/benchmark.dir/apps/benchmark.cpp.o -c /home/vboxuser/Desktop/CHAT/apps/benchmark.cpp
 
-CMakeFiles/benchmark.dir/src/benchmark.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/benchmark.dir/src/benchmark.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vboxuser/Desktop/CHAT/src/benchmark.cpp > CMakeFiles/benchmark.dir/src/benchmark.cpp.i
+CMakeFiles/benchmark.dir/apps/benchmark.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/benchmark.dir/apps/benchmark.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vboxuser/Desktop/CHAT/apps/benchmark.cpp > CMakeFiles/benchmark.dir/apps/benchmark.cpp.i
 
-CMakeFiles/benchmark.dir/src/benchmark.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/benchmark.dir/src/benchmark.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vboxuser/Desktop/CHAT/src/benchmark.cpp -o CMakeFiles/benchmark.dir/src/benchmark.cpp.s
+CMakeFiles/benchmark.dir/apps/benchmark.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/benchmark.dir/apps/benchmark.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vboxuser/Desktop/CHAT/apps/benchmark.cpp -o CMakeFiles/benchmark.dir/apps/benchmark.cpp.s
 
 # Object files for target benchmark
 benchmark_OBJECTS = \
-"CMakeFiles/benchmark.dir/src/benchmark.cpp.o"
+"CMakeFiles/benchmark.dir/apps/benchmark.cpp.o"
 
 # External object files for target benchmark
 benchmark_EXTERNAL_OBJECTS =
 
-benchmark: CMakeFiles/benchmark.dir/src/benchmark.cpp.o
+benchmark: CMakeFiles/benchmark.dir/apps/benchmark.cpp.o
 benchmark: CMakeFiles/benchmark.dir/build.make
 benchmark: CMakeFiles/benchmark.dir/compiler_depend.ts
-benchmark: libchat_core.a
+benchmark: libinfrastructure.a
+benchmark: libapplication.a
+benchmark: libdomain.a
+benchmark: /usr/lib/x86_64-linux-gnu/librdkafka.so
 benchmark: CMakeFiles/benchmark.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable benchmark"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/benchmark.dir/link.txt --verbose=$(VERBOSE)

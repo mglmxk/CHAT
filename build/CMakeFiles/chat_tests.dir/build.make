@@ -72,31 +72,34 @@ include CMakeFiles/chat_tests.dir/flags.make
 CMakeFiles/chat_tests.dir/codegen:
 .PHONY : CMakeFiles/chat_tests.dir/codegen
 
-CMakeFiles/chat_tests.dir/src/tests.cpp.o: CMakeFiles/chat_tests.dir/flags.make
-CMakeFiles/chat_tests.dir/src/tests.cpp.o: /home/vboxuser/Desktop/CHAT/src/tests.cpp
-CMakeFiles/chat_tests.dir/src/tests.cpp.o: CMakeFiles/chat_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/chat_tests.dir/src/tests.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chat_tests.dir/src/tests.cpp.o -MF CMakeFiles/chat_tests.dir/src/tests.cpp.o.d -o CMakeFiles/chat_tests.dir/src/tests.cpp.o -c /home/vboxuser/Desktop/CHAT/src/tests.cpp
+CMakeFiles/chat_tests.dir/tests/scenario_tests.cpp.o: CMakeFiles/chat_tests.dir/flags.make
+CMakeFiles/chat_tests.dir/tests/scenario_tests.cpp.o: /home/vboxuser/Desktop/CHAT/tests/scenario_tests.cpp
+CMakeFiles/chat_tests.dir/tests/scenario_tests.cpp.o: CMakeFiles/chat_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/chat_tests.dir/tests/scenario_tests.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chat_tests.dir/tests/scenario_tests.cpp.o -MF CMakeFiles/chat_tests.dir/tests/scenario_tests.cpp.o.d -o CMakeFiles/chat_tests.dir/tests/scenario_tests.cpp.o -c /home/vboxuser/Desktop/CHAT/tests/scenario_tests.cpp
 
-CMakeFiles/chat_tests.dir/src/tests.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/chat_tests.dir/src/tests.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vboxuser/Desktop/CHAT/src/tests.cpp > CMakeFiles/chat_tests.dir/src/tests.cpp.i
+CMakeFiles/chat_tests.dir/tests/scenario_tests.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/chat_tests.dir/tests/scenario_tests.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vboxuser/Desktop/CHAT/tests/scenario_tests.cpp > CMakeFiles/chat_tests.dir/tests/scenario_tests.cpp.i
 
-CMakeFiles/chat_tests.dir/src/tests.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chat_tests.dir/src/tests.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vboxuser/Desktop/CHAT/src/tests.cpp -o CMakeFiles/chat_tests.dir/src/tests.cpp.s
+CMakeFiles/chat_tests.dir/tests/scenario_tests.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chat_tests.dir/tests/scenario_tests.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vboxuser/Desktop/CHAT/tests/scenario_tests.cpp -o CMakeFiles/chat_tests.dir/tests/scenario_tests.cpp.s
 
 # Object files for target chat_tests
 chat_tests_OBJECTS = \
-"CMakeFiles/chat_tests.dir/src/tests.cpp.o"
+"CMakeFiles/chat_tests.dir/tests/scenario_tests.cpp.o"
 
 # External object files for target chat_tests
 chat_tests_EXTERNAL_OBJECTS =
 
-chat_tests: CMakeFiles/chat_tests.dir/src/tests.cpp.o
+chat_tests: CMakeFiles/chat_tests.dir/tests/scenario_tests.cpp.o
 chat_tests: CMakeFiles/chat_tests.dir/build.make
 chat_tests: CMakeFiles/chat_tests.dir/compiler_depend.ts
-chat_tests: libchat_core.a
+chat_tests: libinfrastructure.a
+chat_tests: libapplication.a
+chat_tests: libdomain.a
+chat_tests: /usr/lib/x86_64-linux-gnu/librdkafka.so
 chat_tests: CMakeFiles/chat_tests.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable chat_tests"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/chat_tests.dir/link.txt --verbose=$(VERBOSE)

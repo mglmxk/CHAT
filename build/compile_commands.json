@@ -1,38 +1,56 @@
 [
 {
   "directory": "/home/vboxuser/Desktop/CHAT/build",
-  "command": "/usr/bin/c++  -I/home/vboxuser/Desktop/CHAT/includes -std=gnu++23 -Wall -Wextra -o CMakeFiles/chat_core.dir/src/chat_core.cpp.o -c /home/vboxuser/Desktop/CHAT/src/chat_core.cpp",
-  "file": "/home/vboxuser/Desktop/CHAT/src/chat_core.cpp",
-  "output": "CMakeFiles/chat_core.dir/src/chat_core.cpp.o"
+  "command": "/usr/bin/c++  -I/home/vboxuser/Desktop/CHAT/domain/include -std=gnu++23 -Wall -Wextra -o CMakeFiles/domain.dir/domain/src/room_state.cpp.o -c /home/vboxuser/Desktop/CHAT/domain/src/room_state.cpp",
+  "file": "/home/vboxuser/Desktop/CHAT/domain/src/room_state.cpp",
+  "output": "CMakeFiles/domain.dir/domain/src/room_state.cpp.o"
 },
 {
   "directory": "/home/vboxuser/Desktop/CHAT/build",
-  "command": "/usr/bin/c++  -I/home/vboxuser/Desktop/CHAT/includes -std=gnu++23 -Wall -Wextra -o CMakeFiles/chat_core.dir/src/composition_root.cpp.o -c /home/vboxuser/Desktop/CHAT/src/composition_root.cpp",
-  "file": "/home/vboxuser/Desktop/CHAT/src/composition_root.cpp",
-  "output": "CMakeFiles/chat_core.dir/src/composition_root.cpp.o"
+  "command": "/usr/bin/c++  -I/home/vboxuser/Desktop/CHAT/domain/include -std=gnu++23 -Wall -Wextra -o CMakeFiles/domain.dir/domain/src/event_serializer.cpp.o -c /home/vboxuser/Desktop/CHAT/domain/src/event_serializer.cpp",
+  "file": "/home/vboxuser/Desktop/CHAT/domain/src/event_serializer.cpp",
+  "output": "CMakeFiles/domain.dir/domain/src/event_serializer.cpp.o"
 },
 {
   "directory": "/home/vboxuser/Desktop/CHAT/build",
-  "command": "/usr/bin/c++  -I/home/vboxuser/Desktop/CHAT/includes -std=gnu++23 -Wall -Wextra -o CMakeFiles/chat_cli.dir/src/main.cpp.o -c /home/vboxuser/Desktop/CHAT/src/main.cpp",
-  "file": "/home/vboxuser/Desktop/CHAT/src/main.cpp",
-  "output": "CMakeFiles/chat_cli.dir/src/main.cpp.o"
+  "command": "/usr/bin/c++  -I/home/vboxuser/Desktop/CHAT/application/include -I/home/vboxuser/Desktop/CHAT/domain/include -std=gnu++23 -Wall -Wextra -o CMakeFiles/application.dir/application/src/chat_app.cpp.o -c /home/vboxuser/Desktop/CHAT/application/src/chat_app.cpp",
+  "file": "/home/vboxuser/Desktop/CHAT/application/src/chat_app.cpp",
+  "output": "CMakeFiles/application.dir/application/src/chat_app.cpp.o"
 },
 {
   "directory": "/home/vboxuser/Desktop/CHAT/build",
-  "command": "/usr/bin/c++  -I/home/vboxuser/Desktop/CHAT/includes -std=gnu++23 -Wall -Wextra -o CMakeFiles/chat_tests.dir/src/tests.cpp.o -c /home/vboxuser/Desktop/CHAT/src/tests.cpp",
-  "file": "/home/vboxuser/Desktop/CHAT/src/tests.cpp",
-  "output": "CMakeFiles/chat_tests.dir/src/tests.cpp.o"
+  "command": "/usr/bin/c++  -I/home/vboxuser/Desktop/CHAT/infrastructure/include -I/home/vboxuser/Desktop/CHAT/application/include -I/home/vboxuser/Desktop/CHAT/domain/include -isystem /usr/include/p11-kit-1 -isystem /usr/include/mit-krb5 -std=gnu++23 -Wall -Wextra -o CMakeFiles/infrastructure.dir/infrastructure/src/composition_root.cpp.o -c /home/vboxuser/Desktop/CHAT/infrastructure/src/composition_root.cpp",
+  "file": "/home/vboxuser/Desktop/CHAT/infrastructure/src/composition_root.cpp",
+  "output": "CMakeFiles/infrastructure.dir/infrastructure/src/composition_root.cpp.o"
 },
 {
   "directory": "/home/vboxuser/Desktop/CHAT/build",
-  "command": "/usr/bin/c++  -I/home/vboxuser/Desktop/CHAT/includes -std=gnu++23 -Wall -Wextra -O2 -o CMakeFiles/benchmark.dir/src/benchmark.cpp.o -c /home/vboxuser/Desktop/CHAT/src/benchmark.cpp",
-  "file": "/home/vboxuser/Desktop/CHAT/src/benchmark.cpp",
-  "output": "CMakeFiles/benchmark.dir/src/benchmark.cpp.o"
+  "command": "/usr/bin/c++  -I/home/vboxuser/Desktop/CHAT/infrastructure/include -I/home/vboxuser/Desktop/CHAT/application/include -I/home/vboxuser/Desktop/CHAT/domain/include -isystem /usr/include/p11-kit-1 -isystem /usr/include/mit-krb5 -std=gnu++23 -Wall -Wextra -o CMakeFiles/infrastructure.dir/infrastructure/src/kafka_producer.cpp.o -c /home/vboxuser/Desktop/CHAT/infrastructure/src/kafka_producer.cpp",
+  "file": "/home/vboxuser/Desktop/CHAT/infrastructure/src/kafka_producer.cpp",
+  "output": "CMakeFiles/infrastructure.dir/infrastructure/src/kafka_producer.cpp.o"
 },
 {
   "directory": "/home/vboxuser/Desktop/CHAT/build",
-  "command": "/usr/bin/c++  -I/home/vboxuser/Desktop/CHAT/includes -std=gnu++23 -Wall -Wextra -fsanitize=address,undefined -g -o CMakeFiles/chat_tests_asan.dir/src/tests.cpp.o -c /home/vboxuser/Desktop/CHAT/src/tests.cpp",
-  "file": "/home/vboxuser/Desktop/CHAT/src/tests.cpp",
-  "output": "CMakeFiles/chat_tests_asan.dir/src/tests.cpp.o"
+  "command": "/usr/bin/c++  -I/home/vboxuser/Desktop/CHAT/infrastructure/include -I/home/vboxuser/Desktop/CHAT/application/include -I/home/vboxuser/Desktop/CHAT/domain/include -std=gnu++23 -Wall -Wextra -o CMakeFiles/chat_cli.dir/apps/chat_cli.cpp.o -c /home/vboxuser/Desktop/CHAT/apps/chat_cli.cpp",
+  "file": "/home/vboxuser/Desktop/CHAT/apps/chat_cli.cpp",
+  "output": "CMakeFiles/chat_cli.dir/apps/chat_cli.cpp.o"
+},
+{
+  "directory": "/home/vboxuser/Desktop/CHAT/build",
+  "command": "/usr/bin/c++  -isystem /usr/include/p11-kit-1 -isystem /usr/include/mit-krb5 -std=gnu++23 -Wall -Wextra -o CMakeFiles/chat_tail.dir/apps/chat_tail.cpp.o -c /home/vboxuser/Desktop/CHAT/apps/chat_tail.cpp",
+  "file": "/home/vboxuser/Desktop/CHAT/apps/chat_tail.cpp",
+  "output": "CMakeFiles/chat_tail.dir/apps/chat_tail.cpp.o"
+},
+{
+  "directory": "/home/vboxuser/Desktop/CHAT/build",
+  "command": "/usr/bin/c++  -I/home/vboxuser/Desktop/CHAT/infrastructure/include -I/home/vboxuser/Desktop/CHAT/application/include -I/home/vboxuser/Desktop/CHAT/domain/include -std=gnu++23 -Wall -Wextra -O2 -o CMakeFiles/benchmark.dir/apps/benchmark.cpp.o -c /home/vboxuser/Desktop/CHAT/apps/benchmark.cpp",
+  "file": "/home/vboxuser/Desktop/CHAT/apps/benchmark.cpp",
+  "output": "CMakeFiles/benchmark.dir/apps/benchmark.cpp.o"
+},
+{
+  "directory": "/home/vboxuser/Desktop/CHAT/build",
+  "command": "/usr/bin/c++  -I/home/vboxuser/Desktop/CHAT/infrastructure/include -I/home/vboxuser/Desktop/CHAT/application/include -I/home/vboxuser/Desktop/CHAT/domain/include -std=gnu++23 -Wall -Wextra -o CMakeFiles/chat_tests.dir/tests/scenario_tests.cpp.o -c /home/vboxuser/Desktop/CHAT/tests/scenario_tests.cpp",
+  "file": "/home/vboxuser/Desktop/CHAT/tests/scenario_tests.cpp",
+  "output": "CMakeFiles/chat_tests.dir/tests/scenario_tests.cpp.o"
 }
 ]

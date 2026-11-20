@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdomain.a CMakeFiles/domain.dir/domain/src/room_state.cpp.o CMakeFiles/domain.dir/domain/src/event_serializer.cpp.o
+/usr/bin/ranlib libdomain.a

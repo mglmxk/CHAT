@@ -2,8 +2,11 @@ chat_tests: \
   /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o \
   /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o \
   /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o \
-  CMakeFiles/chat_tests.dir/src/tests.cpp.o \
-  libchat_core.a \
+  CMakeFiles/chat_tests.dir/tests/scenario_tests.cpp.o \
+  libinfrastructure.a \
+  libapplication.a \
+  libdomain.a \
+  /usr/lib/x86_64-linux-gnu/librdkafka.so \
   /usr/lib/gcc/x86_64-linux-gnu/13/libstdc++.so \
   /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libm.so \
   /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libm.so \
@@ -39,9 +42,15 @@ chat_tests: \
 
 /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o:
 
-CMakeFiles/chat_tests.dir/src/tests.cpp.o:
+CMakeFiles/chat_tests.dir/tests/scenario_tests.cpp.o:
 
-libchat_core.a:
+libinfrastructure.a:
+
+libapplication.a:
+
+libdomain.a:
+
+/usr/lib/x86_64-linux-gnu/librdkafka.so:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/libstdc++.so:
 

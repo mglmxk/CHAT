@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/vboxuser/Desktop/CHAT/src/main.cpp" "CMakeFiles/chat_cli.dir/src/main.cpp.o" "gcc" "CMakeFiles/chat_cli.dir/src/main.cpp.o.d"
+  "/home/vboxuser/Desktop/CHAT/apps/chat_cli.cpp" "CMakeFiles/chat_cli.dir/apps/chat_cli.cpp.o" "gcc" "CMakeFiles/chat_cli.dir/apps/chat_cli.cpp.o.d"
   "" "chat_cli" "gcc" "CMakeFiles/chat_cli.dir/link.d"
   )
 

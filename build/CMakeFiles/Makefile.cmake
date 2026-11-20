@@ -20,6 +20,9 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.31/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
   "/usr/share/cmake-3.31/Modules/Compiler/GNU-CXX.cmake"
   "/usr/share/cmake-3.31/Modules/Compiler/GNU.cmake"
+  "/usr/share/cmake-3.31/Modules/FindPackageHandleStandardArgs.cmake"
+  "/usr/share/cmake-3.31/Modules/FindPackageMessage.cmake"
+  "/usr/share/cmake-3.31/Modules/FindPkgConfig.cmake"
   "/usr/share/cmake-3.31/Modules/Internal/CMakeCXXLinkerInformation.cmake"
   "/usr/share/cmake-3.31/Modules/Internal/CMakeCommonLinkerInformation.cmake"
   "/usr/share/cmake-3.31/Modules/Linker/GNU-CXX.cmake"
@@ -47,9 +50,12 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/chat_core.dir/DependInfo.cmake"
+  "CMakeFiles/domain.dir/DependInfo.cmake"
+  "CMakeFiles/application.dir/DependInfo.cmake"
+  "CMakeFiles/infrastructure.dir/DependInfo.cmake"
   "CMakeFiles/chat_cli.dir/DependInfo.cmake"
-  "CMakeFiles/chat_tests.dir/DependInfo.cmake"
+  "CMakeFiles/chat_tail.dir/DependInfo.cmake"
   "CMakeFiles/benchmark.dir/DependInfo.cmake"
-  "CMakeFiles/chat_tests_asan.dir/DependInfo.cmake"
+  "CMakeFiles/chat_tests.dir/DependInfo.cmake"
+  "CMakeFiles/check_layers.dir/DependInfo.cmake"
   )

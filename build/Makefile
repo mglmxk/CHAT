@@ -127,17 +127,43 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named chat_core
+# Target rules for targets named domain
 
 # Build rule for target.
-chat_core: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 chat_core
-.PHONY : chat_core
+domain: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 domain
+.PHONY : domain
 
 # fast build rule for target.
-chat_core/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_core.dir/build.make CMakeFiles/chat_core.dir/build
-.PHONY : chat_core/fast
+domain/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/domain.dir/build.make CMakeFiles/domain.dir/build
+.PHONY : domain/fast
+
+#=============================================================================
+# Target rules for targets named application
+
+# Build rule for target.
+application: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 application
+.PHONY : application
+
+# fast build rule for target.
+application/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/application.dir/build.make CMakeFiles/application.dir/build
+.PHONY : application/fast
+
+#=============================================================================
+# Target rules for targets named infrastructure
+
+# Build rule for target.
+infrastructure: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 infrastructure
+.PHONY : infrastructure
+
+# fast build rule for target.
+infrastructure/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/infrastructure.dir/build.make CMakeFiles/infrastructure.dir/build
+.PHONY : infrastructure/fast
 
 #=============================================================================
 # Target rules for targets named chat_cli
@@ -153,17 +179,17 @@ chat_cli/fast:
 .PHONY : chat_cli/fast
 
 #=============================================================================
-# Target rules for targets named chat_tests
+# Target rules for targets named chat_tail
 
 # Build rule for target.
-chat_tests: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 chat_tests
-.PHONY : chat_tests
+chat_tail: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 chat_tail
+.PHONY : chat_tail
 
 # fast build rule for target.
-chat_tests/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests.dir/build.make CMakeFiles/chat_tests.dir/build
-.PHONY : chat_tests/fast
+chat_tail/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tail.dir/build.make CMakeFiles/chat_tail.dir/build
+.PHONY : chat_tail/fast
 
 #=============================================================================
 # Target rules for targets named benchmark
@@ -179,140 +205,246 @@ benchmark/fast:
 .PHONY : benchmark/fast
 
 #=============================================================================
-# Target rules for targets named chat_tests_asan
+# Target rules for targets named chat_tests
 
 # Build rule for target.
-chat_tests_asan: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 chat_tests_asan
-.PHONY : chat_tests_asan
+chat_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 chat_tests
+.PHONY : chat_tests
 
 # fast build rule for target.
-chat_tests_asan/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests_asan.dir/build.make CMakeFiles/chat_tests_asan.dir/build
-.PHONY : chat_tests_asan/fast
+chat_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests.dir/build.make CMakeFiles/chat_tests.dir/build
+.PHONY : chat_tests/fast
 
-src/benchmark.o: src/benchmark.cpp.o
-.PHONY : src/benchmark.o
+#=============================================================================
+# Target rules for targets named check_layers
 
-# target to build an object file
-src/benchmark.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/benchmark.cpp.o
-.PHONY : src/benchmark.cpp.o
+# Build rule for target.
+check_layers: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 check_layers
+.PHONY : check_layers
 
-src/benchmark.i: src/benchmark.cpp.i
-.PHONY : src/benchmark.i
+# fast build rule for target.
+check_layers/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/check_layers.dir/build.make CMakeFiles/check_layers.dir/build
+.PHONY : check_layers/fast
 
-# target to preprocess a source file
-src/benchmark.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/benchmark.cpp.i
-.PHONY : src/benchmark.cpp.i
-
-src/benchmark.s: src/benchmark.cpp.s
-.PHONY : src/benchmark.s
-
-# target to generate assembly for a file
-src/benchmark.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/benchmark.cpp.s
-.PHONY : src/benchmark.cpp.s
-
-src/chat_core.o: src/chat_core.cpp.o
-.PHONY : src/chat_core.o
+application/src/chat_app.o: application/src/chat_app.cpp.o
+.PHONY : application/src/chat_app.o
 
 # target to build an object file
-src/chat_core.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_core.dir/build.make CMakeFiles/chat_core.dir/src/chat_core.cpp.o
-.PHONY : src/chat_core.cpp.o
+application/src/chat_app.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/application.dir/build.make CMakeFiles/application.dir/application/src/chat_app.cpp.o
+.PHONY : application/src/chat_app.cpp.o
 
-src/chat_core.i: src/chat_core.cpp.i
-.PHONY : src/chat_core.i
+application/src/chat_app.i: application/src/chat_app.cpp.i
+.PHONY : application/src/chat_app.i
 
 # target to preprocess a source file
-src/chat_core.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_core.dir/build.make CMakeFiles/chat_core.dir/src/chat_core.cpp.i
-.PHONY : src/chat_core.cpp.i
+application/src/chat_app.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/application.dir/build.make CMakeFiles/application.dir/application/src/chat_app.cpp.i
+.PHONY : application/src/chat_app.cpp.i
 
-src/chat_core.s: src/chat_core.cpp.s
-.PHONY : src/chat_core.s
+application/src/chat_app.s: application/src/chat_app.cpp.s
+.PHONY : application/src/chat_app.s
 
 # target to generate assembly for a file
-src/chat_core.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_core.dir/build.make CMakeFiles/chat_core.dir/src/chat_core.cpp.s
-.PHONY : src/chat_core.cpp.s
+application/src/chat_app.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/application.dir/build.make CMakeFiles/application.dir/application/src/chat_app.cpp.s
+.PHONY : application/src/chat_app.cpp.s
 
-src/composition_root.o: src/composition_root.cpp.o
-.PHONY : src/composition_root.o
+apps/benchmark.o: apps/benchmark.cpp.o
+.PHONY : apps/benchmark.o
 
 # target to build an object file
-src/composition_root.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_core.dir/build.make CMakeFiles/chat_core.dir/src/composition_root.cpp.o
-.PHONY : src/composition_root.cpp.o
+apps/benchmark.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/apps/benchmark.cpp.o
+.PHONY : apps/benchmark.cpp.o
 
-src/composition_root.i: src/composition_root.cpp.i
-.PHONY : src/composition_root.i
+apps/benchmark.i: apps/benchmark.cpp.i
+.PHONY : apps/benchmark.i
 
 # target to preprocess a source file
-src/composition_root.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_core.dir/build.make CMakeFiles/chat_core.dir/src/composition_root.cpp.i
-.PHONY : src/composition_root.cpp.i
+apps/benchmark.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/apps/benchmark.cpp.i
+.PHONY : apps/benchmark.cpp.i
 
-src/composition_root.s: src/composition_root.cpp.s
-.PHONY : src/composition_root.s
+apps/benchmark.s: apps/benchmark.cpp.s
+.PHONY : apps/benchmark.s
 
 # target to generate assembly for a file
-src/composition_root.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_core.dir/build.make CMakeFiles/chat_core.dir/src/composition_root.cpp.s
-.PHONY : src/composition_root.cpp.s
+apps/benchmark.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/apps/benchmark.cpp.s
+.PHONY : apps/benchmark.cpp.s
 
-src/main.o: src/main.cpp.o
-.PHONY : src/main.o
+apps/chat_cli.o: apps/chat_cli.cpp.o
+.PHONY : apps/chat_cli.o
 
 # target to build an object file
-src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_cli.dir/build.make CMakeFiles/chat_cli.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+apps/chat_cli.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_cli.dir/build.make CMakeFiles/chat_cli.dir/apps/chat_cli.cpp.o
+.PHONY : apps/chat_cli.cpp.o
 
-src/main.i: src/main.cpp.i
-.PHONY : src/main.i
+apps/chat_cli.i: apps/chat_cli.cpp.i
+.PHONY : apps/chat_cli.i
 
 # target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_cli.dir/build.make CMakeFiles/chat_cli.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+apps/chat_cli.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_cli.dir/build.make CMakeFiles/chat_cli.dir/apps/chat_cli.cpp.i
+.PHONY : apps/chat_cli.cpp.i
 
-src/main.s: src/main.cpp.s
-.PHONY : src/main.s
+apps/chat_cli.s: apps/chat_cli.cpp.s
+.PHONY : apps/chat_cli.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_cli.dir/build.make CMakeFiles/chat_cli.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+apps/chat_cli.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_cli.dir/build.make CMakeFiles/chat_cli.dir/apps/chat_cli.cpp.s
+.PHONY : apps/chat_cli.cpp.s
 
-src/tests.o: src/tests.cpp.o
-.PHONY : src/tests.o
+apps/chat_tail.o: apps/chat_tail.cpp.o
+.PHONY : apps/chat_tail.o
 
 # target to build an object file
-src/tests.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests.dir/build.make CMakeFiles/chat_tests.dir/src/tests.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests_asan.dir/build.make CMakeFiles/chat_tests_asan.dir/src/tests.cpp.o
-.PHONY : src/tests.cpp.o
+apps/chat_tail.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tail.dir/build.make CMakeFiles/chat_tail.dir/apps/chat_tail.cpp.o
+.PHONY : apps/chat_tail.cpp.o
 
-src/tests.i: src/tests.cpp.i
-.PHONY : src/tests.i
+apps/chat_tail.i: apps/chat_tail.cpp.i
+.PHONY : apps/chat_tail.i
 
 # target to preprocess a source file
-src/tests.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests.dir/build.make CMakeFiles/chat_tests.dir/src/tests.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests_asan.dir/build.make CMakeFiles/chat_tests_asan.dir/src/tests.cpp.i
-.PHONY : src/tests.cpp.i
+apps/chat_tail.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tail.dir/build.make CMakeFiles/chat_tail.dir/apps/chat_tail.cpp.i
+.PHONY : apps/chat_tail.cpp.i
 
-src/tests.s: src/tests.cpp.s
-.PHONY : src/tests.s
+apps/chat_tail.s: apps/chat_tail.cpp.s
+.PHONY : apps/chat_tail.s
 
 # target to generate assembly for a file
-src/tests.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests.dir/build.make CMakeFiles/chat_tests.dir/src/tests.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests_asan.dir/build.make CMakeFiles/chat_tests_asan.dir/src/tests.cpp.s
-.PHONY : src/tests.cpp.s
+apps/chat_tail.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tail.dir/build.make CMakeFiles/chat_tail.dir/apps/chat_tail.cpp.s
+.PHONY : apps/chat_tail.cpp.s
+
+domain/src/event_serializer.o: domain/src/event_serializer.cpp.o
+.PHONY : domain/src/event_serializer.o
+
+# target to build an object file
+domain/src/event_serializer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/domain.dir/build.make CMakeFiles/domain.dir/domain/src/event_serializer.cpp.o
+.PHONY : domain/src/event_serializer.cpp.o
+
+domain/src/event_serializer.i: domain/src/event_serializer.cpp.i
+.PHONY : domain/src/event_serializer.i
+
+# target to preprocess a source file
+domain/src/event_serializer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/domain.dir/build.make CMakeFiles/domain.dir/domain/src/event_serializer.cpp.i
+.PHONY : domain/src/event_serializer.cpp.i
+
+domain/src/event_serializer.s: domain/src/event_serializer.cpp.s
+.PHONY : domain/src/event_serializer.s
+
+# target to generate assembly for a file
+domain/src/event_serializer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/domain.dir/build.make CMakeFiles/domain.dir/domain/src/event_serializer.cpp.s
+.PHONY : domain/src/event_serializer.cpp.s
+
+domain/src/room_state.o: domain/src/room_state.cpp.o
+.PHONY : domain/src/room_state.o
+
+# target to build an object file
+domain/src/room_state.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/domain.dir/build.make CMakeFiles/domain.dir/domain/src/room_state.cpp.o
+.PHONY : domain/src/room_state.cpp.o
+
+domain/src/room_state.i: domain/src/room_state.cpp.i
+.PHONY : domain/src/room_state.i
+
+# target to preprocess a source file
+domain/src/room_state.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/domain.dir/build.make CMakeFiles/domain.dir/domain/src/room_state.cpp.i
+.PHONY : domain/src/room_state.cpp.i
+
+domain/src/room_state.s: domain/src/room_state.cpp.s
+.PHONY : domain/src/room_state.s
+
+# target to generate assembly for a file
+domain/src/room_state.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/domain.dir/build.make CMakeFiles/domain.dir/domain/src/room_state.cpp.s
+.PHONY : domain/src/room_state.cpp.s
+
+infrastructure/src/composition_root.o: infrastructure/src/composition_root.cpp.o
+.PHONY : infrastructure/src/composition_root.o
+
+# target to build an object file
+infrastructure/src/composition_root.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/infrastructure.dir/build.make CMakeFiles/infrastructure.dir/infrastructure/src/composition_root.cpp.o
+.PHONY : infrastructure/src/composition_root.cpp.o
+
+infrastructure/src/composition_root.i: infrastructure/src/composition_root.cpp.i
+.PHONY : infrastructure/src/composition_root.i
+
+# target to preprocess a source file
+infrastructure/src/composition_root.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/infrastructure.dir/build.make CMakeFiles/infrastructure.dir/infrastructure/src/composition_root.cpp.i
+.PHONY : infrastructure/src/composition_root.cpp.i
+
+infrastructure/src/composition_root.s: infrastructure/src/composition_root.cpp.s
+.PHONY : infrastructure/src/composition_root.s
+
+# target to generate assembly for a file
+infrastructure/src/composition_root.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/infrastructure.dir/build.make CMakeFiles/infrastructure.dir/infrastructure/src/composition_root.cpp.s
+.PHONY : infrastructure/src/composition_root.cpp.s
+
+infrastructure/src/kafka_producer.o: infrastructure/src/kafka_producer.cpp.o
+.PHONY : infrastructure/src/kafka_producer.o
+
+# target to build an object file
+infrastructure/src/kafka_producer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/infrastructure.dir/build.make CMakeFiles/infrastructure.dir/infrastructure/src/kafka_producer.cpp.o
+.PHONY : infrastructure/src/kafka_producer.cpp.o
+
+infrastructure/src/kafka_producer.i: infrastructure/src/kafka_producer.cpp.i
+.PHONY : infrastructure/src/kafka_producer.i
+
+# target to preprocess a source file
+infrastructure/src/kafka_producer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/infrastructure.dir/build.make CMakeFiles/infrastructure.dir/infrastructure/src/kafka_producer.cpp.i
+.PHONY : infrastructure/src/kafka_producer.cpp.i
+
+infrastructure/src/kafka_producer.s: infrastructure/src/kafka_producer.cpp.s
+.PHONY : infrastructure/src/kafka_producer.s
+
+# target to generate assembly for a file
+infrastructure/src/kafka_producer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/infrastructure.dir/build.make CMakeFiles/infrastructure.dir/infrastructure/src/kafka_producer.cpp.s
+.PHONY : infrastructure/src/kafka_producer.cpp.s
+
+tests/scenario_tests.o: tests/scenario_tests.cpp.o
+.PHONY : tests/scenario_tests.o
+
+# target to build an object file
+tests/scenario_tests.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests.dir/build.make CMakeFiles/chat_tests.dir/tests/scenario_tests.cpp.o
+.PHONY : tests/scenario_tests.cpp.o
+
+tests/scenario_tests.i: tests/scenario_tests.cpp.i
+.PHONY : tests/scenario_tests.i
+
+# target to preprocess a source file
+tests/scenario_tests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests.dir/build.make CMakeFiles/chat_tests.dir/tests/scenario_tests.cpp.i
+.PHONY : tests/scenario_tests.cpp.i
+
+tests/scenario_tests.s: tests/scenario_tests.cpp.s
+.PHONY : tests/scenario_tests.s
+
+# target to generate assembly for a file
+tests/scenario_tests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests.dir/build.make CMakeFiles/chat_tests.dir/tests/scenario_tests.cpp.s
+.PHONY : tests/scenario_tests.cpp.s
 
 # Help Target
 help:
@@ -323,26 +455,41 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... check_layers"
+	@echo "... application"
 	@echo "... benchmark"
 	@echo "... chat_cli"
-	@echo "... chat_core"
+	@echo "... chat_tail"
 	@echo "... chat_tests"
-	@echo "... chat_tests_asan"
-	@echo "... src/benchmark.o"
-	@echo "... src/benchmark.i"
-	@echo "... src/benchmark.s"
-	@echo "... src/chat_core.o"
-	@echo "... src/chat_core.i"
-	@echo "... src/chat_core.s"
-	@echo "... src/composition_root.o"
-	@echo "... src/composition_root.i"
-	@echo "... src/composition_root.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
-	@echo "... src/tests.o"
-	@echo "... src/tests.i"
-	@echo "... src/tests.s"
+	@echo "... domain"
+	@echo "... infrastructure"
+	@echo "... application/src/chat_app.o"
+	@echo "... application/src/chat_app.i"
+	@echo "... application/src/chat_app.s"
+	@echo "... apps/benchmark.o"
+	@echo "... apps/benchmark.i"
+	@echo "... apps/benchmark.s"
+	@echo "... apps/chat_cli.o"
+	@echo "... apps/chat_cli.i"
+	@echo "... apps/chat_cli.s"
+	@echo "... apps/chat_tail.o"
+	@echo "... apps/chat_tail.i"
+	@echo "... apps/chat_tail.s"
+	@echo "... domain/src/event_serializer.o"
+	@echo "... domain/src/event_serializer.i"
+	@echo "... domain/src/event_serializer.s"
+	@echo "... domain/src/room_state.o"
+	@echo "... domain/src/room_state.i"
+	@echo "... domain/src/room_state.s"
+	@echo "... infrastructure/src/composition_root.o"
+	@echo "... infrastructure/src/composition_root.i"
+	@echo "... infrastructure/src/composition_root.s"
+	@echo "... infrastructure/src/kafka_producer.o"
+	@echo "... infrastructure/src/kafka_producer.i"
+	@echo "... infrastructure/src/kafka_producer.s"
+	@echo "... tests/scenario_tests.o"
+	@echo "... tests/scenario_tests.i"
+	@echo "... tests/scenario_tests.s"
 .PHONY : help
 
 

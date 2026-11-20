@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/chat_tail.dir/link.d CMakeFiles/chat_tail.dir/apps/chat_tail.cpp.o -o chat_tail  /usr/lib/x86_64-linux-gnu/librdkafka.so

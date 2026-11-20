@@ -63,19 +63,23 @@ CMAKE_BINARY_DIR = /home/vboxuser/Desktop/CHAT/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/chat_core.dir/all
+all: CMakeFiles/domain.dir/all
+all: CMakeFiles/application.dir/all
+all: CMakeFiles/infrastructure.dir/all
 all: CMakeFiles/chat_cli.dir/all
-all: CMakeFiles/chat_tests.dir/all
+all: CMakeFiles/chat_tail.dir/all
 all: CMakeFiles/benchmark.dir/all
-all: CMakeFiles/chat_tests_asan.dir/all
+all: CMakeFiles/chat_tests.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
-codegen: CMakeFiles/chat_core.dir/codegen
+codegen: CMakeFiles/domain.dir/codegen
+codegen: CMakeFiles/application.dir/codegen
+codegen: CMakeFiles/infrastructure.dir/codegen
 codegen: CMakeFiles/chat_cli.dir/codegen
-codegen: CMakeFiles/chat_tests.dir/codegen
+codegen: CMakeFiles/chat_tail.dir/codegen
 codegen: CMakeFiles/benchmark.dir/codegen
-codegen: CMakeFiles/chat_tests_asan.dir/codegen
+codegen: CMakeFiles/chat_tests.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -83,58 +87,128 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/chat_core.dir/clean
+clean: CMakeFiles/domain.dir/clean
+clean: CMakeFiles/application.dir/clean
+clean: CMakeFiles/infrastructure.dir/clean
 clean: CMakeFiles/chat_cli.dir/clean
-clean: CMakeFiles/chat_tests.dir/clean
+clean: CMakeFiles/chat_tail.dir/clean
 clean: CMakeFiles/benchmark.dir/clean
-clean: CMakeFiles/chat_tests_asan.dir/clean
+clean: CMakeFiles/chat_tests.dir/clean
+clean: CMakeFiles/check_layers.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/chat_core.dir
+# Target rules for target CMakeFiles/domain.dir
 
 # All Build rule for target.
-CMakeFiles/chat_core.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_core.dir/build.make CMakeFiles/chat_core.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_core.dir/build.make CMakeFiles/chat_core.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=5,6,7 "Built target chat_core"
-.PHONY : CMakeFiles/chat_core.dir/all
+CMakeFiles/domain.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/domain.dir/build.make CMakeFiles/domain.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/domain.dir/build.make CMakeFiles/domain.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=11,12,13 "Built target domain"
+.PHONY : CMakeFiles/domain.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/chat_core.dir/rule: cmake_check_build_system
+CMakeFiles/domain.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/vboxuser/Desktop/CHAT/build/CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/chat_core.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/domain.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/vboxuser/Desktop/CHAT/build/CMakeFiles 0
-.PHONY : CMakeFiles/chat_core.dir/rule
+.PHONY : CMakeFiles/domain.dir/rule
 
 # Convenience name for target.
-chat_core: CMakeFiles/chat_core.dir/rule
-.PHONY : chat_core
+domain: CMakeFiles/domain.dir/rule
+.PHONY : domain
 
 # codegen rule for target.
-CMakeFiles/chat_core.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_core.dir/build.make CMakeFiles/chat_core.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=5,6,7 "Finished codegen for target chat_core"
-.PHONY : CMakeFiles/chat_core.dir/codegen
+CMakeFiles/domain.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/domain.dir/build.make CMakeFiles/domain.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=11,12,13 "Finished codegen for target domain"
+.PHONY : CMakeFiles/domain.dir/codegen
 
 # clean rule for target.
-CMakeFiles/chat_core.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_core.dir/build.make CMakeFiles/chat_core.dir/clean
-.PHONY : CMakeFiles/chat_core.dir/clean
+CMakeFiles/domain.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/domain.dir/build.make CMakeFiles/domain.dir/clean
+.PHONY : CMakeFiles/domain.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/application.dir
+
+# All Build rule for target.
+CMakeFiles/application.dir/all: CMakeFiles/domain.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/application.dir/build.make CMakeFiles/application.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/application.dir/build.make CMakeFiles/application.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=1,2 "Built target application"
+.PHONY : CMakeFiles/application.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/application.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vboxuser/Desktop/CHAT/build/CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/application.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vboxuser/Desktop/CHAT/build/CMakeFiles 0
+.PHONY : CMakeFiles/application.dir/rule
+
+# Convenience name for target.
+application: CMakeFiles/application.dir/rule
+.PHONY : application
+
+# codegen rule for target.
+CMakeFiles/application.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/application.dir/build.make CMakeFiles/application.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=1,2 "Finished codegen for target application"
+.PHONY : CMakeFiles/application.dir/codegen
+
+# clean rule for target.
+CMakeFiles/application.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/application.dir/build.make CMakeFiles/application.dir/clean
+.PHONY : CMakeFiles/application.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/infrastructure.dir
+
+# All Build rule for target.
+CMakeFiles/infrastructure.dir/all: CMakeFiles/domain.dir/all
+CMakeFiles/infrastructure.dir/all: CMakeFiles/application.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/infrastructure.dir/build.make CMakeFiles/infrastructure.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/infrastructure.dir/build.make CMakeFiles/infrastructure.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=14,15,16 "Built target infrastructure"
+.PHONY : CMakeFiles/infrastructure.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/infrastructure.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vboxuser/Desktop/CHAT/build/CMakeFiles 8
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/infrastructure.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vboxuser/Desktop/CHAT/build/CMakeFiles 0
+.PHONY : CMakeFiles/infrastructure.dir/rule
+
+# Convenience name for target.
+infrastructure: CMakeFiles/infrastructure.dir/rule
+.PHONY : infrastructure
+
+# codegen rule for target.
+CMakeFiles/infrastructure.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/infrastructure.dir/build.make CMakeFiles/infrastructure.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=14,15,16 "Finished codegen for target infrastructure"
+.PHONY : CMakeFiles/infrastructure.dir/codegen
+
+# clean rule for target.
+CMakeFiles/infrastructure.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/infrastructure.dir/build.make CMakeFiles/infrastructure.dir/clean
+.PHONY : CMakeFiles/infrastructure.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/chat_cli.dir
 
 # All Build rule for target.
-CMakeFiles/chat_cli.dir/all: CMakeFiles/chat_core.dir/all
+CMakeFiles/chat_cli.dir/all: CMakeFiles/domain.dir/all
+CMakeFiles/chat_cli.dir/all: CMakeFiles/application.dir/all
+CMakeFiles/chat_cli.dir/all: CMakeFiles/infrastructure.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_cli.dir/build.make CMakeFiles/chat_cli.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_cli.dir/build.make CMakeFiles/chat_cli.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=3,4 "Built target chat_cli"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=5,6 "Built target chat_cli"
 .PHONY : CMakeFiles/chat_cli.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/chat_cli.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vboxuser/Desktop/CHAT/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vboxuser/Desktop/CHAT/build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/chat_cli.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/vboxuser/Desktop/CHAT/build/CMakeFiles 0
 .PHONY : CMakeFiles/chat_cli.dir/rule
@@ -146,7 +220,7 @@ chat_cli: CMakeFiles/chat_cli.dir/rule
 # codegen rule for target.
 CMakeFiles/chat_cli.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_cli.dir/build.make CMakeFiles/chat_cli.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=3,4 "Finished codegen for target chat_cli"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=5,6 "Finished codegen for target chat_cli"
 .PHONY : CMakeFiles/chat_cli.dir/codegen
 
 # clean rule for target.
@@ -155,50 +229,52 @@ CMakeFiles/chat_cli.dir/clean:
 .PHONY : CMakeFiles/chat_cli.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/chat_tests.dir
+# Target rules for target CMakeFiles/chat_tail.dir
 
 # All Build rule for target.
-CMakeFiles/chat_tests.dir/all: CMakeFiles/chat_core.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests.dir/build.make CMakeFiles/chat_tests.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests.dir/build.make CMakeFiles/chat_tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=8,9 "Built target chat_tests"
-.PHONY : CMakeFiles/chat_tests.dir/all
+CMakeFiles/chat_tail.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tail.dir/build.make CMakeFiles/chat_tail.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tail.dir/build.make CMakeFiles/chat_tail.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=7,8 "Built target chat_tail"
+.PHONY : CMakeFiles/chat_tail.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/chat_tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vboxuser/Desktop/CHAT/build/CMakeFiles 5
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/chat_tests.dir/all
+CMakeFiles/chat_tail.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vboxuser/Desktop/CHAT/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/chat_tail.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/vboxuser/Desktop/CHAT/build/CMakeFiles 0
-.PHONY : CMakeFiles/chat_tests.dir/rule
+.PHONY : CMakeFiles/chat_tail.dir/rule
 
 # Convenience name for target.
-chat_tests: CMakeFiles/chat_tests.dir/rule
-.PHONY : chat_tests
+chat_tail: CMakeFiles/chat_tail.dir/rule
+.PHONY : chat_tail
 
 # codegen rule for target.
-CMakeFiles/chat_tests.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests.dir/build.make CMakeFiles/chat_tests.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=8,9 "Finished codegen for target chat_tests"
-.PHONY : CMakeFiles/chat_tests.dir/codegen
+CMakeFiles/chat_tail.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tail.dir/build.make CMakeFiles/chat_tail.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=7,8 "Finished codegen for target chat_tail"
+.PHONY : CMakeFiles/chat_tail.dir/codegen
 
 # clean rule for target.
-CMakeFiles/chat_tests.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests.dir/build.make CMakeFiles/chat_tests.dir/clean
-.PHONY : CMakeFiles/chat_tests.dir/clean
+CMakeFiles/chat_tail.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tail.dir/build.make CMakeFiles/chat_tail.dir/clean
+.PHONY : CMakeFiles/chat_tail.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/benchmark.dir
 
 # All Build rule for target.
-CMakeFiles/benchmark.dir/all: CMakeFiles/chat_core.dir/all
+CMakeFiles/benchmark.dir/all: CMakeFiles/domain.dir/all
+CMakeFiles/benchmark.dir/all: CMakeFiles/application.dir/all
+CMakeFiles/benchmark.dir/all: CMakeFiles/infrastructure.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=1,2 "Built target benchmark"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=3,4 "Built target benchmark"
 .PHONY : CMakeFiles/benchmark.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/benchmark.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vboxuser/Desktop/CHAT/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vboxuser/Desktop/CHAT/build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/benchmark.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/vboxuser/Desktop/CHAT/build/CMakeFiles 0
 .PHONY : CMakeFiles/benchmark.dir/rule
@@ -210,7 +286,7 @@ benchmark: CMakeFiles/benchmark.dir/rule
 # codegen rule for target.
 CMakeFiles/benchmark.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=1,2 "Finished codegen for target benchmark"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=3,4 "Finished codegen for target benchmark"
 .PHONY : CMakeFiles/benchmark.dir/codegen
 
 # clean rule for target.
@@ -219,36 +295,70 @@ CMakeFiles/benchmark.dir/clean:
 .PHONY : CMakeFiles/benchmark.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/chat_tests_asan.dir
+# Target rules for target CMakeFiles/chat_tests.dir
 
 # All Build rule for target.
-CMakeFiles/chat_tests_asan.dir/all: CMakeFiles/chat_core.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests_asan.dir/build.make CMakeFiles/chat_tests_asan.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests_asan.dir/build.make CMakeFiles/chat_tests_asan.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=10,11 "Built target chat_tests_asan"
-.PHONY : CMakeFiles/chat_tests_asan.dir/all
+CMakeFiles/chat_tests.dir/all: CMakeFiles/domain.dir/all
+CMakeFiles/chat_tests.dir/all: CMakeFiles/application.dir/all
+CMakeFiles/chat_tests.dir/all: CMakeFiles/infrastructure.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests.dir/build.make CMakeFiles/chat_tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests.dir/build.make CMakeFiles/chat_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=9,10 "Built target chat_tests"
+.PHONY : CMakeFiles/chat_tests.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/chat_tests_asan.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vboxuser/Desktop/CHAT/build/CMakeFiles 5
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/chat_tests_asan.dir/all
+CMakeFiles/chat_tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vboxuser/Desktop/CHAT/build/CMakeFiles 10
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/chat_tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/vboxuser/Desktop/CHAT/build/CMakeFiles 0
-.PHONY : CMakeFiles/chat_tests_asan.dir/rule
+.PHONY : CMakeFiles/chat_tests.dir/rule
 
 # Convenience name for target.
-chat_tests_asan: CMakeFiles/chat_tests_asan.dir/rule
-.PHONY : chat_tests_asan
+chat_tests: CMakeFiles/chat_tests.dir/rule
+.PHONY : chat_tests
 
 # codegen rule for target.
-CMakeFiles/chat_tests_asan.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests_asan.dir/build.make CMakeFiles/chat_tests_asan.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=10,11 "Finished codegen for target chat_tests_asan"
-.PHONY : CMakeFiles/chat_tests_asan.dir/codegen
+CMakeFiles/chat_tests.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests.dir/build.make CMakeFiles/chat_tests.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=9,10 "Finished codegen for target chat_tests"
+.PHONY : CMakeFiles/chat_tests.dir/codegen
 
 # clean rule for target.
-CMakeFiles/chat_tests_asan.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests_asan.dir/build.make CMakeFiles/chat_tests_asan.dir/clean
-.PHONY : CMakeFiles/chat_tests_asan.dir/clean
+CMakeFiles/chat_tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests.dir/build.make CMakeFiles/chat_tests.dir/clean
+.PHONY : CMakeFiles/chat_tests.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/check_layers.dir
+
+# All Build rule for target.
+CMakeFiles/check_layers.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/check_layers.dir/build.make CMakeFiles/check_layers.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/check_layers.dir/build.make CMakeFiles/check_layers.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num= "Built target check_layers"
+.PHONY : CMakeFiles/check_layers.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/check_layers.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vboxuser/Desktop/CHAT/build/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/check_layers.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vboxuser/Desktop/CHAT/build/CMakeFiles 0
+.PHONY : CMakeFiles/check_layers.dir/rule
+
+# Convenience name for target.
+check_layers: CMakeFiles/check_layers.dir/rule
+.PHONY : check_layers
+
+# codegen rule for target.
+CMakeFiles/check_layers.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/check_layers.dir/build.make CMakeFiles/check_layers.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num= "Finished codegen for target check_layers"
+.PHONY : CMakeFiles/check_layers.dir/codegen
+
+# clean rule for target.
+CMakeFiles/check_layers.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/check_layers.dir/build.make CMakeFiles/check_layers.dir/clean
+.PHONY : CMakeFiles/check_layers.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

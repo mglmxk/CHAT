@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/chat_cli.dir/link.d"
-  "CMakeFiles/chat_cli.dir/src/main.cpp.o"
-  "CMakeFiles/chat_cli.dir/src/main.cpp.o.d"
+  "CMakeFiles/chat_cli.dir/apps/chat_cli.cpp.o"
+  "CMakeFiles/chat_cli.dir/apps/chat_cli.cpp.o.d"
   "chat_cli"
   "chat_cli.pdb"
 )

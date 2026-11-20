@@ -1,1 +1,1 @@
-/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/chat_cli.dir/link.d CMakeFiles/chat_cli.dir/src/main.cpp.o -o chat_cli  libchat_core.a
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/chat_cli.dir/link.d CMakeFiles/chat_cli.dir/apps/chat_cli.cpp.o -o chat_cli  libinfrastructure.a libapplication.a libdomain.a /usr/lib/x86_64-linux-gnu/librdkafka.so

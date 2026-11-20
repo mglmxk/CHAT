@@ -1,0 +1,2 @@
+/usr/bin/ar qc libapplication.a CMakeFiles/application.dir/application/src/chat_app.cpp.o
+/usr/bin/ranlib libapplication.a
