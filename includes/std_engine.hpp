@@ -24,7 +24,7 @@ public:
         out.reserve(rooms_.size());
         std::transform(rooms_.begin(), rooms_.end(), std::back_inserter(out),
                        [](const auto& kv) { return kv.first; });
-        return out;  // std::map уже даёт алфавитный порядок
+        return out;  
     }
 
     void post(const std::string& room, Message msg) override {

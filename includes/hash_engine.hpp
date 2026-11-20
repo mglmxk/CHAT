@@ -25,7 +25,7 @@ public:
         std::vector<std::string> out;
         out.reserve(rooms_.size());
         for (auto it = rooms_.begin(); it != rooms_.end(); ++it) out.push_back(it->first);
-        std::ranges::sort(out);  // хеш-таблица порядка не даёт — сортируем явно
+        std::ranges::sort(out);  
         return out;
     }
 

@@ -29,7 +29,6 @@ public:
         }
     }
 
-    // Откат последней push_back (сильная гарантия в multi_post).
     void rollback() {
         if (size_ == 0) throw std::runtime_error("Cannot rollback empty RingBuffer");
         tail_ = (tail_ + capacity_ - 1) % capacity_;

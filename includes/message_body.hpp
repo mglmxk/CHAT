@@ -4,7 +4,7 @@
 #include <memory>
 #include <utility>
 
-// Здесь наследование = подстановочность: любое тело сообщения взаимозаменяемо.
+
 class IMessageBody {
 public:
     virtual ~IMessageBody() = default;
@@ -12,7 +12,7 @@ public:
     virtual std::string kind() const = 0;
     virtual std::unique_ptr<IMessageBody> clone() const = 0;
 
-    // Tell Don't Ask: объект сам решает, применима ли реакция.
+   
     virtual void react(const std::string& emoji) {
         (void)emoji;
         throw TypeMismatchError("ReactionableMessage", kind());

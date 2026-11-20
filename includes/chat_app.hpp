@@ -9,7 +9,6 @@
 #include <vector>
 #include <string_view>
 
-// GRASP Controller: только маршрутизация ввода, никакой бизнес-логики и вывода.
 class ChatApp {
 public:
     ChatApp(IChatStore& store, MessageFactory& factory, IPresenter& ui) {

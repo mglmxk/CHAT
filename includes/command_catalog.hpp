@@ -5,7 +5,6 @@
 #include "command_registry.hpp"
 #include <string>
 
-// Единственная ответственность: связать имена команд с обработчиками.
 class CommandCatalog {
 public:
     CommandCatalog(IChatStore& store, MessageFactory& factory, IPresenter& ui)

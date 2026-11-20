@@ -43,14 +43,14 @@ static void run_suite(const char* label, IChatStore& store,
     auto all = store.history("#a", HistoryQuery{});
     CHECK(all.size() == 3);
     CHECK(all[0].render() == "m0");
-    CHECK(all[0].id().timestamp() < all[2].id().timestamp());  // время из FakeClock
+    CHECK(all[0].id().timestamp() < all[2].id().timestamp());  
 
     auto by_author = store.history("#a", HistoryQuery{"Никита", 0});
     CHECK(by_author.size() == 2);
     auto limited = store.history("#a", HistoryQuery{"Никита", 1});
     CHECK(limited.size() == 1);
 
-    // Tell Don't Ask: тип не спрашиваем
+  
     store.post("#a", factory.reaction("Миша", "👍"));
     store.react("#a", 3, "👍");
     CHECK(store.history("#a", HistoryQuery{}).back().render() == "👍 x2");
@@ -59,7 +59,6 @@ static void run_suite(const char* label, IChatStore& store,
     try { store.react("#a", 0, "👍"); } catch (const TypeMismatchError&) { threw = true; }
     CHECK(threw);
 
-    // Сильная гарантия multi_post
     auto before = store.history("#b", HistoryQuery{}).size();
     threw = false;
     try { store.multi_post({"#b", "#missing"}, factory.text("Никита", "broadcast")); }
@@ -71,14 +70,13 @@ static void run_suite(const char* label, IChatStore& store,
     store.multi_post({"#a", "#b"}, msg);
     CHECK(store.history("#b", HistoryQuery{}).size() == before + 1);
 
-    // Вытеснение в кольцевом буфере
+  
     store.create_room("#small");
     for (int i = 0; i < 150; ++i) store.post("#small", factory.text("Никита", std::to_string(i)));
     auto h = store.history("#small", HistoryQuery{});
     CHECK(h.size() == 100);
     CHECK(h.front().render() == "50");
 
-    // Участники: erase_if / count_if
     auto nikita = std::make_shared<User>("Никита");
     auto sema   = std::make_shared<User>("Сема");
     store.add_participant("#a", nikita);
@@ -90,11 +88,10 @@ static void run_suite(const char* label, IChatStore& store,
     auto sorted = store.nicks_by_length("#a");
     CHECK(sorted.front().size() <= sorted.back().size());
 
-    // Алфавитный порядок для ROOMS на обоих движках
     auto names = store.room_names();
     CHECK(std::is_sorted(names.begin(), names.end()));
 
-    CHECK(!sink.lines().empty());   // журнал пишется через порт
+    CHECK(!sink.lines().empty()); 
 }
 
 int main() {

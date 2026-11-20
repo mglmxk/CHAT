@@ -8,7 +8,6 @@
 #include <string_view>
 
 struct AppComponents {
-    // Порядок объявления = порядок уничтожения обратный: app умирает первым.
     std::unique_ptr<IClock> clock;
     std::unique_ptr<ILogSink> sink;
     std::unique_ptr<IPresenter> presenter;

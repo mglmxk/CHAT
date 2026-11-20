@@ -5,8 +5,6 @@
 #include <string>
 #include <utility>
 
-// Pure Fabrication: штамповка ID и отметок времени не принадлежит
-// ни Message (значение), ни IChatStore (хранилище).
 class MessageFactory {
 public:
     explicit MessageFactory(const IClock& clock) : clock_(clock) {}

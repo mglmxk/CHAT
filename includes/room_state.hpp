@@ -10,8 +10,7 @@
 #include <iterator>
 #include <functional>
 
-// Information Expert: все операции над данными комнаты живут здесь,
-// а не дублируются в двух движках.
+
 class RoomState {
 public:
     explicit RoomState(size_t capacity) : messages_(capacity) {}

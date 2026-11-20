@@ -5,7 +5,6 @@
 #include <memory>
 #include <utility>
 
-// Композиция: автор и время — значение-член, а не базовый класс.
 struct MessageHeader {
     std::string author;
     MessageId id;

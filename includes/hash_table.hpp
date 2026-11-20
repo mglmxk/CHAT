@@ -89,7 +89,7 @@ public:
 
         bool operator==(const Iterator& other) const {
             if (bucket_index != other.bucket_index) return false;
-            if (bucket_index == buckets->size()) return true;   // оба в конце
+            if (bucket_index == buckets->size()) return true;   
             return bucket_iter == other.bucket_iter;
         }
         bool operator!=(const Iterator& other) const { return !(*this == other); }
