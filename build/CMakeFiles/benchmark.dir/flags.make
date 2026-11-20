@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/home/vboxuser/Desktop/CHAT/includes
 
-CXX_FLAGS = -std=c++23 -Wall -Wextra -Wshadow -O2
+CXX_FLAGS = -std=gnu++23 -Wall -Wextra -O2
 

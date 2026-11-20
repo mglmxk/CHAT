@@ -1,56 +1,33 @@
 #pragma once
-
+#include "message_id.hpp"
+#include "message_body.hpp"
 #include <string>
-#include <chrono>
-#include <variant>
-#include <type_traits>
+#include <memory>
+#include <utility>
 
-struct TextBody {
-    std::string text;
+// Композиция: автор и время — значение-член, а не базовый класс.
+struct MessageHeader {
+    std::string author;
+    MessageId id;
 };
-
-struct SystemNotice {
-    std::string text;
-};
-
-struct Reaction {
-    std::string emoji;
-    int count = 0;
-};
-
-using MessageBody = std::variant<TextBody, SystemNotice, Reaction>;
 
 class Message {
 public:
-    Message(std::string author, MessageBody body)
-        : author_(std::move(author))
-        , body_(std::move(body))
-        , timestamp_(std::chrono::system_clock::now()) {}
+    Message(MessageHeader header, std::unique_ptr<IMessageBody> body)
+        : header_(std::move(header)), body_(std::move(body)) {}
 
-    const std::string& author() const { return author_; }
+    const std::string& author() const { return header_.author; }
+    const MessageId& id() const { return header_.id; }
+    std::string render() const { return body_->render(); }
+    std::string kind() const { return body_->kind(); }
+    void react(const std::string& emoji) { body_->react(emoji); }
+    Message clone() const { return Message(header_, body_->clone()); }
 
-    const MessageBody& body() const { return body_; }
-    
-    MessageBody& body() { return body_; }
-    
-    auto timestamp() const { return timestamp_; }
-
-    std::string typeName() const {
-        return std::visit([](const auto& body) -> std::string {
-            using T = std::decay_t<decltype(body)>;
-            if constexpr (std::is_same_v<T, TextBody>) {
-                return "TextBody";
-            } else if constexpr (std::is_same_v<T, SystemNotice>) {
-                return "SystemNotice";
-            } else if constexpr (std::is_same_v<T, Reaction>) {
-                return "Reaction";
-            }
-            return "Unknown";
-        }, body_);
-    }
-
+    Message(const Message&) = delete;
+    Message& operator=(const Message&) = delete;
+    Message(Message&&) noexcept = default;
+    Message& operator=(Message&&) noexcept = default;
 private:
-    std::string author_;
-    MessageBody body_;
-    std::chrono::system_clock::time_point timestamp_;
+    MessageHeader header_;
+    std::unique_ptr<IMessageBody> body_;
 };

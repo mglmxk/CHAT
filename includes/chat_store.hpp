@@ -6,6 +6,8 @@
 #include "log.hpp"
 #include "concepts.hpp"
 #include "message_id.hpp"
+#include "ring_buffer.hpp"
+#include "history_iterator.hpp"
 
 #include <map>
 #include <vector>
@@ -15,10 +17,12 @@
 #include <memory>
 #include <algorithm>
 #include <ranges>
-#include <iostream>   
+#include <iostream>
 
 class ChatStore {
 public:
+    static constexpr size_t DEFAULT_HISTORY_CAPACITY = 100;
+
     ChatStore() = default;
 
     ChatStore(const ChatStore&) = delete;
@@ -27,14 +31,13 @@ public:
     ChatStore(ChatStore&&) noexcept = default;
     ChatStore& operator=(ChatStore&&) noexcept = default;
 
-    
     template<NickLike Nick>
     void create_room(const Nick& room_name) {
         std::string name(room_name);
         if (rooms_.find(name) != rooms_.end()) {
             throw ChatError("Room already exists: '" + name + "'");
         }
-        rooms_[name] = Room{};
+        rooms_.emplace(name, Room{DEFAULT_HISTORY_CAPACITY});
         if (log_) log_->append("Room created: " + name);
     }
 
@@ -58,11 +61,13 @@ public:
         try {
             for (const auto& room : room_names) {
                 auto clone = clone_message(*msg);
-                rooms_[room].messages.push_back(std::move(clone));
+                rooms_.at(room).messages.push_back(std::move(clone));
                 succeeded.push_back(room);
             }
         } catch (...) {
-            for (const auto& room : succeeded) rooms_[room].messages.pop_back();
+            for (const auto& room : succeeded) {
+                rooms_.at(room).messages.rollback();
+            }
             throw;
         }
     }
@@ -76,8 +81,9 @@ public:
         if (!msg->isReaction())
             throw TypeMismatchError("ReactionMessage", msg->typeName());
         msg->incrementReaction();
-        (void)emoji;  
+        (void)emoji;
     }
+
 
     std::vector<std::string> history_with_filters(
         const std::string& room_name,
@@ -88,24 +94,25 @@ public:
         if (it == rooms_.end()) throw UnknownRoomError(room_name);
         const auto& messages = it->second.messages;
 
-        auto filtered = messages | std::views::filter([&](const auto& msg) {
+        std::vector<const IMessage*> filtered;
+        for (size_t i = 0; i < messages.size(); ++i) {
+            const auto& msg = messages[i];
             std::cout << "[DEBUG] filter called for: " << msg->author() << "\n";
-            return author.empty() || msg->author() == author;
-        });
-        auto transformed = filtered | std::views::transform([](const auto& msg) {
+            
+            if (author.empty() || msg->author() == author) {
+                filtered.push_back(msg.get());
+                if (max_count > 0 && filtered.size() >= max_count) {
+                    break;
+                }
+            }
+        }
+
+        auto transformed = filtered | std::views::transform([](const IMessage* msg) {
             return msg->render();
         });
 
-        std::vector<std::string> result;
-        if (max_count == 0) {
-            for (auto&& s : transformed) result.emplace_back(std::string(s));
-        } else {
-            for (auto&& s : transformed | std::views::take(max_count))
-                result.emplace_back(std::string(s));
-        }
-        return result;
+        return std::vector<std::string>(transformed.begin(), transformed.end());
     }
-
 
     std::vector<std::string> sorted_participants_by_nickname_length(
         const std::string& room_name) const
@@ -163,8 +170,10 @@ public:
 
 private:
     struct Room {
-        std::vector<std::unique_ptr<IMessage>> messages;
+        RingBuffer<std::unique_ptr<IMessage>> messages;
         std::vector<UserWeakPtr> participants;
+
+        explicit Room(size_t capacity) : messages(capacity) {}
     };
 
     static std::unique_ptr<IMessage> clone_message(const IMessage& src) {

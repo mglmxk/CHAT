@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/chat_core.dir/src/chat_core.cpp.o"
   "CMakeFiles/chat_core.dir/src/chat_core.cpp.o.d"
+  "CMakeFiles/chat_core.dir/src/composition_root.cpp.o"
+  "CMakeFiles/chat_core.dir/src/composition_root.cpp.o.d"
   "libchat_core.a"
   "libchat_core.pdb"
 )

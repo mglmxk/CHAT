@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/vboxuser/Desktop/CHAT/src/chat_core.cpp" "CMakeFiles/chat_core.dir/src/chat_core.cpp.o" "gcc" "CMakeFiles/chat_core.dir/src/chat_core.cpp.o.d"
+  "/home/vboxuser/Desktop/CHAT/src/composition_root.cpp" "CMakeFiles/chat_core.dir/src/composition_root.cpp.o" "gcc" "CMakeFiles/chat_core.dir/src/composition_root.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

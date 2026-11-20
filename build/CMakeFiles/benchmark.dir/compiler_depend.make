@@ -98,6 +98,7 @@ CMakeFiles/benchmark.dir/src/benchmark.cpp.o: /home/vboxuser/Desktop/CHAT/src/be
   /usr/include/c++/13/bits/stl_multimap.h \
   /usr/include/c++/13/bits/stl_numeric.h \
   /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stl_relops.h \
   /usr/include/c++/13/bits/stl_tempbuf.h \
   /usr/include/c++/13/bits/stl_tree.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
@@ -183,6 +184,7 @@ CMakeFiles/benchmark.dir/src/benchmark.cpp.o: /home/vboxuser/Desktop/CHAT/src/be
   /usr/include/c++/13/type_traits \
   /usr/include/c++/13/typeinfo \
   /usr/include/c++/13/unordered_map \
+  /usr/include/c++/13/utility \
   /usr/include/c++/13/variant \
   /usr/include/c++/13/vector \
   /usr/include/ctype.h \
@@ -332,8 +334,11 @@ benchmark: /lib/x86_64-linux-gnu/libc.so.6 \
   /usr/lib/gcc/x86_64-linux-gnu/13/libgcc_s.so \
   /usr/lib/gcc/x86_64-linux-gnu/13/libstdc++.so \
   /usr/lib/x86_64-linux-gnu/libc_nonshared.a \
-  CMakeFiles/benchmark.dir/src/benchmark.cpp.o
+  CMakeFiles/benchmark.dir/src/benchmark.cpp.o \
+  libchat_core.a
 
+
+libchat_core.a:
 
 /usr/lib/x86_64-linux-gnu/libc_nonshared.a:
 
@@ -523,8 +528,6 @@ benchmark: /lib/x86_64-linux-gnu/libc.so.6 \
 
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
-/usr/include/c++/13/bits/stl_heap.h:
-
 /usr/include/c++/13/bits/std_abs.h:
 
 /usr/include/c++/13/bits/parse_numbers.h:
@@ -622,6 +625,10 @@ benchmark: /lib/x86_64-linux-gnu/libc.so.6 \
 /usr/include/x86_64-linux-gnu/bits/select-decl.h:
 
 /home/vboxuser/Desktop/CHAT/src/benchmark.cpp:
+
+/usr/include/c++/13/bits/stl_heap.h:
+
+/usr/include/c++/13/utility:
 
 /usr/include/c++/13/bits/invoke.h:
 
@@ -756,6 +763,12 @@ benchmark: /lib/x86_64-linux-gnu/libc.so.6 \
 /usr/include/c++/13/bits/hashtable.h:
 
 /usr/include/c++/13/bits/ios_base.h:
+
+/usr/include/x86_64-linux-gnu/bits/timesize.h:
+
+/usr/include/c++/13/bits/locale_classes.h:
+
+/usr/include/c++/13/bits/stl_relops.h:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:
 
@@ -989,10 +1002,6 @@ CMakeFiles/benchmark.dir/src/benchmark.cpp.o:
 
 /usr/include/x86_64-linux-gnu/bits/stdio2.h:
 
-/usr/include/c++/13/bits/locale_classes.h:
-
-/usr/include/x86_64-linux-gnu/bits/timesize.h:
+/usr/include/x86_64-linux-gnu/bits/timex.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
-
-/usr/include/x86_64-linux-gnu/bits/timex.h:

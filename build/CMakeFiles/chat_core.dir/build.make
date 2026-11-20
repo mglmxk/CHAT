@@ -86,17 +86,33 @@ CMakeFiles/chat_core.dir/src/chat_core.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chat_core.dir/src/chat_core.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vboxuser/Desktop/CHAT/src/chat_core.cpp -o CMakeFiles/chat_core.dir/src/chat_core.cpp.s
 
+CMakeFiles/chat_core.dir/src/composition_root.cpp.o: CMakeFiles/chat_core.dir/flags.make
+CMakeFiles/chat_core.dir/src/composition_root.cpp.o: /home/vboxuser/Desktop/CHAT/src/composition_root.cpp
+CMakeFiles/chat_core.dir/src/composition_root.cpp.o: CMakeFiles/chat_core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/chat_core.dir/src/composition_root.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chat_core.dir/src/composition_root.cpp.o -MF CMakeFiles/chat_core.dir/src/composition_root.cpp.o.d -o CMakeFiles/chat_core.dir/src/composition_root.cpp.o -c /home/vboxuser/Desktop/CHAT/src/composition_root.cpp
+
+CMakeFiles/chat_core.dir/src/composition_root.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/chat_core.dir/src/composition_root.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vboxuser/Desktop/CHAT/src/composition_root.cpp > CMakeFiles/chat_core.dir/src/composition_root.cpp.i
+
+CMakeFiles/chat_core.dir/src/composition_root.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chat_core.dir/src/composition_root.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vboxuser/Desktop/CHAT/src/composition_root.cpp -o CMakeFiles/chat_core.dir/src/composition_root.cpp.s
+
 # Object files for target chat_core
 chat_core_OBJECTS = \
-"CMakeFiles/chat_core.dir/src/chat_core.cpp.o"
+"CMakeFiles/chat_core.dir/src/chat_core.cpp.o" \
+"CMakeFiles/chat_core.dir/src/composition_root.cpp.o"
 
 # External object files for target chat_core
 chat_core_EXTERNAL_OBJECTS =
 
 libchat_core.a: CMakeFiles/chat_core.dir/src/chat_core.cpp.o
+libchat_core.a: CMakeFiles/chat_core.dir/src/composition_root.cpp.o
 libchat_core.a: CMakeFiles/chat_core.dir/build.make
 libchat_core.a: CMakeFiles/chat_core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libchat_core.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libchat_core.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/chat_core.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/chat_core.dir/link.txt --verbose=$(VERBOSE)
 

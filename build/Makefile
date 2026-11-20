@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /home/vboxuser/Desktop/CHAT/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -143,6 +153,19 @@ chat_cli/fast:
 .PHONY : chat_cli/fast
 
 #=============================================================================
+# Target rules for targets named chat_tests
+
+# Build rule for target.
+chat_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 chat_tests
+.PHONY : chat_tests
+
+# fast build rule for target.
+chat_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests.dir/build.make CMakeFiles/chat_tests.dir/build
+.PHONY : chat_tests/fast
+
+#=============================================================================
 # Target rules for targets named benchmark
 
 # Build rule for target.
@@ -154,6 +177,19 @@ benchmark: cmake_check_build_system
 benchmark/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/build
 .PHONY : benchmark/fast
+
+#=============================================================================
+# Target rules for targets named chat_tests_asan
+
+# Build rule for target.
+chat_tests_asan: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 chat_tests_asan
+.PHONY : chat_tests_asan
+
+# fast build rule for target.
+chat_tests_asan/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests_asan.dir/build.make CMakeFiles/chat_tests_asan.dir/build
+.PHONY : chat_tests_asan/fast
 
 src/benchmark.o: src/benchmark.cpp.o
 .PHONY : src/benchmark.o
@@ -203,6 +239,30 @@ src/chat_core.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_core.dir/build.make CMakeFiles/chat_core.dir/src/chat_core.cpp.s
 .PHONY : src/chat_core.cpp.s
 
+src/composition_root.o: src/composition_root.cpp.o
+.PHONY : src/composition_root.o
+
+# target to build an object file
+src/composition_root.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_core.dir/build.make CMakeFiles/chat_core.dir/src/composition_root.cpp.o
+.PHONY : src/composition_root.cpp.o
+
+src/composition_root.i: src/composition_root.cpp.i
+.PHONY : src/composition_root.i
+
+# target to preprocess a source file
+src/composition_root.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_core.dir/build.make CMakeFiles/chat_core.dir/src/composition_root.cpp.i
+.PHONY : src/composition_root.cpp.i
+
+src/composition_root.s: src/composition_root.cpp.s
+.PHONY : src/composition_root.s
+
+# target to generate assembly for a file
+src/composition_root.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_core.dir/build.make CMakeFiles/chat_core.dir/src/composition_root.cpp.s
+.PHONY : src/composition_root.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -227,6 +287,33 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_cli.dir/build.make CMakeFiles/chat_cli.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/tests.o: src/tests.cpp.o
+.PHONY : src/tests.o
+
+# target to build an object file
+src/tests.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests.dir/build.make CMakeFiles/chat_tests.dir/src/tests.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests_asan.dir/build.make CMakeFiles/chat_tests_asan.dir/src/tests.cpp.o
+.PHONY : src/tests.cpp.o
+
+src/tests.i: src/tests.cpp.i
+.PHONY : src/tests.i
+
+# target to preprocess a source file
+src/tests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests.dir/build.make CMakeFiles/chat_tests.dir/src/tests.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests_asan.dir/build.make CMakeFiles/chat_tests_asan.dir/src/tests.cpp.i
+.PHONY : src/tests.cpp.i
+
+src/tests.s: src/tests.cpp.s
+.PHONY : src/tests.s
+
+# target to generate assembly for a file
+src/tests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests.dir/build.make CMakeFiles/chat_tests.dir/src/tests.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chat_tests_asan.dir/build.make CMakeFiles/chat_tests_asan.dir/src/tests.cpp.s
+.PHONY : src/tests.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -235,18 +322,27 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... benchmark"
 	@echo "... chat_cli"
 	@echo "... chat_core"
+	@echo "... chat_tests"
+	@echo "... chat_tests_asan"
 	@echo "... src/benchmark.o"
 	@echo "... src/benchmark.i"
 	@echo "... src/benchmark.s"
 	@echo "... src/chat_core.o"
 	@echo "... src/chat_core.i"
 	@echo "... src/chat_core.s"
+	@echo "... src/composition_root.o"
+	@echo "... src/composition_root.i"
+	@echo "... src/composition_root.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/tests.o"
+	@echo "... src/tests.i"
+	@echo "... src/tests.s"
 .PHONY : help
 
 

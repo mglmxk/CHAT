@@ -1,0 +1,31 @@
+@startuml
+actor Пользователь
+participant ChatApp
+participant CommandRegistry
+participant CommandCatalog
+participant MessageFactory
+participant IClock
+participant IChatStore
+participant RoomState
+participant RingBuffer
+participant ILogSink
+participant IPresenter
+
+Пользователь -> ChatApp : execute("/msg #a Привет")
+ChatApp -> ChatApp : Lexer::tokenize
+ChatApp -> CommandRegistry : execute("/msg", args)
+CommandRegistry -> CommandRegistry : check arity (compile-time)
+CommandRegistry -> CommandRegistry : convert<RoomName>, convert<string>
+CommandRegistry -> CommandCatalog : handler(room, text)
+CommandCatalog -> MessageFactory : text("Никита", "Привет")
+MessageFactory -> IClock : now()
+IClock --> MessageFactory : time_point
+MessageFactory --> CommandCatalog : Message
+CommandCatalog -> IChatStore : post("#a", Message)
+IChatStore -> ILogSink : append("[#a] Никита: Привет")
+IChatStore -> RoomState : post(Message)
+RoomState -> RingBuffer : push_back(Message)
+RingBuffer -> RingBuffer : вытеснение старого при переполнении
+CommandCatalog -> IPresenter : success("Отправлено")
+IPresenter --> Пользователь : вывод
+@enduml

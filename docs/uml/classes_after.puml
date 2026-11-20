@@ -1,0 +1,72 @@
+@startuml
+skinparam classAttributeIconSize 0
+package "ports (принадлежат домену)" {
+  interface IClock
+  interface ILogSink
+  interface IPresenter
+  interface IChatStore
+}
+package "adapters" {
+  class SystemClock
+  class FakeClock
+  class FileLogSink
+  class MemoryLogSink
+  class NullLogSink
+  class ConsolePresenter
+}
+package "domain" {
+  class Message
+  class MessageHeader
+  interface IMessageBody
+  class TextBody
+  class SystemBody
+  class ReactionBody
+  class MessageFactory
+  class RoomState
+  class RingBuffer
+  class HistoryQuery
+}
+package "application" {
+  class ChatApp
+  class CommandCatalog
+  class CommandRegistry
+}
+class StdEngine
+class HashEngine
+class HashTable
+class CompositionRoot
+
+IClock <|.. SystemClock
+IClock <|.. FakeClock
+ILogSink <|.. FileLogSink
+ILogSink <|.. MemoryLogSink
+ILogSink <|.. NullLogSink
+IPresenter <|.. ConsolePresenter
+IChatStore <|.. StdEngine
+IChatStore <|.. HashEngine
+IMessageBody <|.. TextBody
+IMessageBody <|.. SystemBody
+IMessageBody <|.. ReactionBody
+
+Message *-- MessageHeader : композиция
+Message *-- IMessageBody : композиция
+MessageFactory ..> IClock : ctor inject
+MessageFactory ..> Message : <<create>>
+RoomState *-- RingBuffer
+RoomState ..> HistoryQuery
+StdEngine *-- RoomState
+StdEngine ..> ILogSink : ctor inject
+HashEngine *-- RoomState
+HashEngine *-- HashTable
+HashEngine ..> ILogSink : ctor inject
+ChatApp *-- CommandRegistry
+ChatApp *-- CommandCatalog
+CommandCatalog ..> IChatStore
+CommandCatalog ..> MessageFactory
+CommandCatalog ..> IPresenter
+CompositionRoot ..> ChatApp : <<create>>
+CompositionRoot ..> StdEngine : <<create>>
+CompositionRoot ..> HashEngine : <<create>>
+CompositionRoot ..> SystemClock : <<create>>
+CompositionRoot ..> FileLogSink : <<create>>
+@enduml

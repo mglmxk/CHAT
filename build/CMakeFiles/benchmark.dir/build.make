@@ -96,6 +96,7 @@ benchmark_EXTERNAL_OBJECTS =
 benchmark: CMakeFiles/benchmark.dir/src/benchmark.cpp.o
 benchmark: CMakeFiles/benchmark.dir/build.make
 benchmark: CMakeFiles/benchmark.dir/compiler_depend.ts
+benchmark: libchat_core.a
 benchmark: CMakeFiles/benchmark.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/vboxuser/Desktop/CHAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable benchmark"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/benchmark.dir/link.txt --verbose=$(VERBOSE)

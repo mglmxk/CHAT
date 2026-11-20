@@ -49,5 +49,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/chat_core.dir/DependInfo.cmake"
   "CMakeFiles/chat_cli.dir/DependInfo.cmake"
+  "CMakeFiles/chat_tests.dir/DependInfo.cmake"
   "CMakeFiles/benchmark.dir/DependInfo.cmake"
+  "CMakeFiles/chat_tests_asan.dir/DependInfo.cmake"
   )

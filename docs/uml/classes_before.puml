@@ -1,0 +1,38 @@
+@startuml
+skinparam classAttributeIconSize 0
+class ChatApp {
+  +execute()
+  -register_all_commands()
+}
+class StdEngine
+class HashEngine
+class AppendOnlyLog
+interface IMessage
+class TextMessage
+class SystemMessage
+class ReactionMessage
+class RingBuffer
+class HashTable
+class "std::map" as StdMap
+class "std::chrono::system_clock" as SysClock
+class Colors
+
+IMessage <|-- TextMessage
+IMessage <|-- SystemMessage
+IMessage <|-- ReactionMessage
+
+ChatApp ..> StdEngine : <<create>>
+ChatApp ..> HashEngine : <<create>>
+ChatApp ..> Colors : использует
+ChatApp ..> IMessage : <<create>>
+StdEngine *-- StdMap
+StdEngine *-- RingBuffer
+StdEngine ..> AppendOnlyLog : <<create>>
+StdEngine ..> SysClock : напрямую
+HashEngine *-- HashTable
+HashEngine *-- RingBuffer
+HashEngine ..> SysClock : напрямую
+StdEngine ..> TextMessage : dynamic_cast clone
+HashEngine ..> TextMessage : dynamic_cast clone
+note bottom of StdEngine : clone_message + Room\nпродублированы в HashEngine
+@enduml

@@ -1,5 +1,8 @@
 /home/vboxuser/Desktop/CHAT/build/CMakeFiles/chat_core.dir
 /home/vboxuser/Desktop/CHAT/build/CMakeFiles/chat_cli.dir
+/home/vboxuser/Desktop/CHAT/build/CMakeFiles/chat_tests.dir
 /home/vboxuser/Desktop/CHAT/build/CMakeFiles/benchmark.dir
+/home/vboxuser/Desktop/CHAT/build/CMakeFiles/chat_tests_asan.dir
+/home/vboxuser/Desktop/CHAT/build/CMakeFiles/test.dir
 /home/vboxuser/Desktop/CHAT/build/CMakeFiles/edit_cache.dir
 /home/vboxuser/Desktop/CHAT/build/CMakeFiles/rebuild_cache.dir

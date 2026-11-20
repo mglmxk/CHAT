@@ -1,20 +1,38 @@
 [
 {
   "directory": "/home/vboxuser/Desktop/CHAT/build",
-  "command": "/usr/bin/c++  -I/home/vboxuser/Desktop/CHAT/includes -std=c++23 -Wall -Wextra -Wshadow -o CMakeFiles/chat_core.dir/src/chat_core.cpp.o -c /home/vboxuser/Desktop/CHAT/src/chat_core.cpp",
+  "command": "/usr/bin/c++  -I/home/vboxuser/Desktop/CHAT/includes -std=gnu++23 -Wall -Wextra -o CMakeFiles/chat_core.dir/src/chat_core.cpp.o -c /home/vboxuser/Desktop/CHAT/src/chat_core.cpp",
   "file": "/home/vboxuser/Desktop/CHAT/src/chat_core.cpp",
   "output": "CMakeFiles/chat_core.dir/src/chat_core.cpp.o"
 },
 {
   "directory": "/home/vboxuser/Desktop/CHAT/build",
-  "command": "/usr/bin/c++  -I/home/vboxuser/Desktop/CHAT/includes -std=c++23 -Wall -Wextra -Wshadow -o CMakeFiles/chat_cli.dir/src/main.cpp.o -c /home/vboxuser/Desktop/CHAT/src/main.cpp",
+  "command": "/usr/bin/c++  -I/home/vboxuser/Desktop/CHAT/includes -std=gnu++23 -Wall -Wextra -o CMakeFiles/chat_core.dir/src/composition_root.cpp.o -c /home/vboxuser/Desktop/CHAT/src/composition_root.cpp",
+  "file": "/home/vboxuser/Desktop/CHAT/src/composition_root.cpp",
+  "output": "CMakeFiles/chat_core.dir/src/composition_root.cpp.o"
+},
+{
+  "directory": "/home/vboxuser/Desktop/CHAT/build",
+  "command": "/usr/bin/c++  -I/home/vboxuser/Desktop/CHAT/includes -std=gnu++23 -Wall -Wextra -o CMakeFiles/chat_cli.dir/src/main.cpp.o -c /home/vboxuser/Desktop/CHAT/src/main.cpp",
   "file": "/home/vboxuser/Desktop/CHAT/src/main.cpp",
   "output": "CMakeFiles/chat_cli.dir/src/main.cpp.o"
 },
 {
   "directory": "/home/vboxuser/Desktop/CHAT/build",
-  "command": "/usr/bin/c++   -std=c++23 -Wall -Wextra -Wshadow -O2 -o CMakeFiles/benchmark.dir/src/benchmark.cpp.o -c /home/vboxuser/Desktop/CHAT/src/benchmark.cpp",
+  "command": "/usr/bin/c++  -I/home/vboxuser/Desktop/CHAT/includes -std=gnu++23 -Wall -Wextra -o CMakeFiles/chat_tests.dir/src/tests.cpp.o -c /home/vboxuser/Desktop/CHAT/src/tests.cpp",
+  "file": "/home/vboxuser/Desktop/CHAT/src/tests.cpp",
+  "output": "CMakeFiles/chat_tests.dir/src/tests.cpp.o"
+},
+{
+  "directory": "/home/vboxuser/Desktop/CHAT/build",
+  "command": "/usr/bin/c++  -I/home/vboxuser/Desktop/CHAT/includes -std=gnu++23 -Wall -Wextra -O2 -o CMakeFiles/benchmark.dir/src/benchmark.cpp.o -c /home/vboxuser/Desktop/CHAT/src/benchmark.cpp",
   "file": "/home/vboxuser/Desktop/CHAT/src/benchmark.cpp",
   "output": "CMakeFiles/benchmark.dir/src/benchmark.cpp.o"
+},
+{
+  "directory": "/home/vboxuser/Desktop/CHAT/build",
+  "command": "/usr/bin/c++  -I/home/vboxuser/Desktop/CHAT/includes -std=gnu++23 -Wall -Wextra -fsanitize=address,undefined -g -o CMakeFiles/chat_tests_asan.dir/src/tests.cpp.o -c /home/vboxuser/Desktop/CHAT/src/tests.cpp",
+  "file": "/home/vboxuser/Desktop/CHAT/src/tests.cpp",
+  "output": "CMakeFiles/chat_tests_asan.dir/src/tests.cpp.o"
 }
 ]
